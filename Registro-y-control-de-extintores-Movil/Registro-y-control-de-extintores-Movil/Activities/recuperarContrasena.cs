@@ -17,8 +17,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.recuperarContrasena);
 
-            // Create your application here
+            Button button = FindViewById<Button>(Resource.Id.recuperarButton);
+            button.Click += delegate { StartActivity(typeof(login)); };
+
         }
     }
 }

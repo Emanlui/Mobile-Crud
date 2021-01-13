@@ -17,7 +17,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            SetContentView(Resource.Layout.galeria);
             // Create your application here
         }
     }

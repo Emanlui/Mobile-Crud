@@ -17,8 +17,25 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.menuPrincipal);
 
-            // Create your application here
+            ImageButton salir = FindViewById<ImageButton>(Resource.Id.salirImage);
+            salir.Click += delegate { StartActivity(typeof(login)); };
+
+            ImageButton extintores = FindViewById<ImageButton>(Resource.Id.extintoresImage);
+            extintores.Click += delegate { StartActivity(typeof(vistaExtintores)); };
+
+            ImageButton galeria = FindViewById<ImageButton>(Resource.Id.galeriaImage);
+            galeria.Click += delegate { StartActivity(typeof(galeria)); };
+
+            ImageButton informacion = FindViewById<ImageButton>(Resource.Id.informacionImage);
+            informacion.Click += delegate { StartActivity(typeof(informacionEnviada)); };
+
+            ImageButton contacto = FindViewById<ImageButton>(Resource.Id.contactosImage);
+            contacto.Click += delegate { StartActivity(typeof(contacto)); };
+
+            ImageButton acerca = FindViewById<ImageButton>(Resource.Id.acercaImage);
+            acerca.Click += delegate { StartActivity(typeof(acercaDe)); };
         }
     }
 }
