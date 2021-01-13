@@ -40,7 +40,6 @@ C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\android\bin\base.zip
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\android\bin\com.companyname.registro_y_control_de_extintores_movil.aab
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\android\bin\com.companyname.registro_y_control_de_extintores_movil.apks
-C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\activity_main.xml
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\colors.xml
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\ic_launcher_background.xml
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\strings.xml

@@ -12,6 +12,7 @@ androidx.coordinatorlayout.widget.CoordinatorLayout;C:\Users\emanu\Desktop\Regis
 attr;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\values\attrs.xml
 background;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\mipmap-anydpi-v26\ic_launcher.xml
 background;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\mipmap-anydpi-v26\ic_launcher_round.xml
+Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
 cache-path;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -27,6 +28,7 @@ com.google.android.material.tabs.TabLayout;C:\Users\emanu\Desktop\Registro-y-con
 crc643f46942d9dd1fff9.ShellFlyoutLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\layout\flyoutcontent.xml
 crc64720bb2db43a66fe9.FormsViewPager;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\layout\rootlayout.xml
 declare-styleable;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\values\attrs.xml
+EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
 EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
 external-cache-path;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -36,6 +38,7 @@ FrameLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Regist
 ImageButton;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\acercade.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\contacto.xml
+ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\informacionenviada.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
@@ -61,6 +64,7 @@ resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\styles.xml
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\values.xml
 ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\informacionenviada.xml
+ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\vistaextintores.xml
 set;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\anim\enterfromleft.xml
 set;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\anim\enterfromright.xml
 set;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\anim\exittoleft.xml

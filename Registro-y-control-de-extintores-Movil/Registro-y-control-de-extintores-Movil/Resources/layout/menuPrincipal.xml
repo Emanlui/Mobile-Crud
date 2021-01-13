@@ -30,7 +30,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="223.5dp"
                 android:layout_height="match_parent"
-                android:id="@+id/textView1"
+                android:id="@+id/centroText"
                 android:layout_marginLeft="106.0dp" />
             <ImageView
                 android:src="@drawable/logout"
