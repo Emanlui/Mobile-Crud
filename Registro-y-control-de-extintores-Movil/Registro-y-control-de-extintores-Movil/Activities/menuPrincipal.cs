@@ -19,22 +19,22 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.menuPrincipal);
 
-            ImageButton salir = FindViewById<ImageButton>(Resource.Id.salirImage);
+            ImageView salir = FindViewById<ImageView>(Resource.Id.salirImage);
             salir.Click += delegate { StartActivity(typeof(login)); };
 
-            ImageButton extintores = FindViewById<ImageButton>(Resource.Id.extintoresImage);
+            ImageView extintores = FindViewById<ImageView>(Resource.Id.extintoresImage);
             extintores.Click += delegate { StartActivity(typeof(vistaExtintores)); };
 
-            ImageButton galeria = FindViewById<ImageButton>(Resource.Id.galeriaImage);
+            ImageView galeria = FindViewById<ImageView>(Resource.Id.galeriaImage);
             galeria.Click += delegate { StartActivity(typeof(galeria)); };
 
-            ImageButton informacion = FindViewById<ImageButton>(Resource.Id.informacionImage);
+            ImageView informacion = FindViewById<ImageView>(Resource.Id.informacionImage);
             informacion.Click += delegate { StartActivity(typeof(informacionEnviada)); };
 
-            ImageButton contacto = FindViewById<ImageButton>(Resource.Id.contactosImage);
+            ImageView contacto = FindViewById<ImageView>(Resource.Id.contactosImage);
             contacto.Click += delegate { StartActivity(typeof(contacto)); };
 
-            ImageButton acerca = FindViewById<ImageButton>(Resource.Id.acercaImage);
+            ImageView acerca = FindViewById<ImageView>(Resource.Id.acercaImage);
             acerca.Click += delegate { StartActivity(typeof(acercaDe)); };
         }
     }

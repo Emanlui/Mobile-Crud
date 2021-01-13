@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        android:background="#063E65"
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
@@ -17,36 +19,54 @@
             android:layout_width="match_parent"
             android:layout_height="163.5dp"
             android:id="@+id/linearLayout2"
-            android:layout_marginBottom="0.0dp"
+            android:layout_marginBottom="7.0dp"
             android:layout_marginLeft="0.0dp">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:layout_width="74.5dp"
+                android:src="@drawable/tec"
+                android:layout_width="181.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/imageView1" />
+                android:id="@+id/imageView1"
+                android:layout_marginLeft="7.0dp"
+                android:layout_marginTop="6.0dp" />
             <TextView
+                android:gravity="center_vertical"
                 android:text="Este proyecto fue creado por parte del Instituto Tecnológico de Costa Rica en conjunto al Departamento de Salud Ocupacional del Ministerio de Seguridad Pública y Estudiantes de la carrera Ingeniería en Computación"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="321.0dp"
+                android:layout_width="187.5dp"
                 android:layout_height="match_parent"
                 android:id="@+id/textView1"
-                android:layout_marginRight="212.0dp"
-                android:layout_marginBottom="0.0dp" />
+                android:textColor="#FFFFFF"
+                android:layout_marginRight="0.0dp"
+                android:layout_marginBottom="2.5dp"
+                android:layout_marginTop="12.5dp"
+                android:layout_marginLeft="9.5dp" />
         </LinearLayout>
+        <ImageView
+            android:src="@android:drawable/divider_horizontal_dark"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom=".1dp"
+            android:paddingTop=".2dp"
+            android:background="#FFFFFF" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="58.0dp"
+            android:layout_height="77.5dp"
             android:id="@+id/linearLayout3"
-            android:layout_marginBottom="0.0dp"
-            android:layout_marginLeft="0.0dp">
+            android:layout_marginBottom="5.5dp"
+            android:layout_marginLeft="0.0dp"
+            android:layout_marginTop="6.5dp">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:layout_width="wrap_content"
+                android:src="@drawable/photo"
+                android:layout_width="78.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/imageView1" />
+                android:id="@+id/imageView1"
+                android:layout_marginLeft="11.0dp" />
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -63,6 +83,7 @@
                     android:layout_height="32.5dp"
                     android:id="@+id/linearLayout7">
                     <TextView
+                        android:textColor="#FFFFFF"
                         android:text="Kevin Ledezma Jiménez"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
@@ -77,6 +98,8 @@
                     android:layout_height="match_parent"
                     android:id="@+id/linearLayout8">
                     <TextView
+                        android:layout_marginLeft="11.0dp"
+                        android:textColor="#FFFFFF"
                         android:text="kledezma204@gmail.com"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_width="match_parent"
@@ -85,20 +108,32 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+        <ImageView
+            android:src="@android:drawable/divider_horizontal_dark"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom=".1dp"
+            android:paddingTop=".2dp"
+            android:background="#FFFFFF" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="58.0dp"
+            android:layout_height="77.5dp"
             android:id="@+id/linearLayout5"
-            android:layout_marginBottom="0.0dp"
-            android:layout_marginLeft="0.0dp">
+            android:layout_marginBottom="5.5dp"
+            android:layout_marginLeft="0.0dp"
+            android:layout_marginTop="6.5dp">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:layout_width="wrap_content"
+                android:src="@drawable/photo"
+                android:layout_width="78.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/imageView1" />
+                android:id="@+id/imageView1"
+                android:layout_marginLeft="11.0dp" />
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -115,6 +150,7 @@
                     android:layout_height="32.5dp"
                     android:id="@+id/linearLayout7">
                     <TextView
+                        android:textColor="#FFFFFF"
                         android:text="Emanuelle Jiménez Sancho"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
@@ -129,6 +165,8 @@
                     android:layout_height="match_parent"
                     android:id="@+id/linearLayout8">
                     <TextView
+                        android:layout_marginLeft="11.0dp"
+                        android:textColor="#FFFFFF"
                         android:text="emanuellejs1999@gmail.com"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_width="match_parent"
@@ -137,20 +175,32 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+        <ImageView
+            android:src="@android:drawable/divider_horizontal_dark"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom=".1dp"
+            android:paddingTop=".2dp"
+            android:background="#FFFFFF" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="58.0dp"
+            android:layout_height="77.5dp"
             android:id="@+id/linearLayout6"
-            android:layout_marginBottom="0.0dp"
-            android:layout_marginLeft="0.0dp">
+            android:layout_marginBottom="5.5dp"
+            android:layout_marginLeft="0.0dp"
+            android:layout_marginTop="5.5dp">
             <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:layout_width="wrap_content"
+                android:src="@drawable/photo"
+                android:layout_width="78.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/imageView1" />
+                android:id="@+id/imageView1"
+                android:layout_marginLeft="11.0dp" />
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
@@ -167,6 +217,7 @@
                     android:layout_height="32.5dp"
                     android:id="@+id/linearLayout7">
                     <TextView
+                        android:textColor="#FFFFFF"
                         android:text="Fabrizio Alvarado Barquero"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
@@ -181,6 +232,8 @@
                     android:layout_height="match_parent"
                     android:id="@+id/linearLayout8">
                     <TextView
+                        android:layout_marginLeft="11.0dp"
+                        android:textColor="#FFFFFF"
                         android:text="faoalv8@gmail.com"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_width="match_parent"

@@ -35,6 +35,8 @@ foreground;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registr
 FrameLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\layout\bottomtablayout.xml
 ImageButton;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\acercade.xml
+ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\contacto.xml
+ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\informacionenviada.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
 ImageView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
 item;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\values\styles.xml
@@ -58,6 +60,7 @@ resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\strings.xml
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\styles.xml
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\values.xml
+ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\informacionenviada.xml
 set;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\anim\enterfromleft.xml
 set;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\anim\enterfromright.xml
 set;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\anim\exittoleft.xml
@@ -68,6 +71,7 @@ string;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-
 style;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\values\styles.xml
 style;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\styles.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\acercade.xml
+TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\contacto.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
