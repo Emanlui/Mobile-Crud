@@ -4,14 +4,14 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
-using Android.Widget;
+using Android.Widget; 
 
 namespace Registro_y_control_de_extintores_Movil.Activities
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class login : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
     {
-        TextView textMessage;
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

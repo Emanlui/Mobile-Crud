@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Registro-y-control-de-extintores-Movil.dll" comes first in this list. */
 		"Registro-y-control-de-extintores-Movil.dll",
 		"FormsViewGroup.dll",
+		"MySqlConnector.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
