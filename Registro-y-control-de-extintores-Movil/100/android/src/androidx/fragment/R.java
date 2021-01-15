@@ -141,9 +141,9 @@ public final class R {
 		public static final int tag_unhandled_key_listeners = 0x7f08012b;
 		public static final int text = 0x7f08012e;
 		public static final int text2 = 0x7f08012f;
-		public static final int time = 0x7f080146;
-		public static final int title = 0x7f080147;
-		public static final int visible_removing_fragment_view_tag = 0x7f08015b;
+		public static final int time = 0x7f08013d;
+		public static final int title = 0x7f08013e;
+		public static final int visible_removing_fragment_view_tag = 0x7f080152;
 	}
 	public static final class integer {
 		public static final int status_bar_notification_info_maxnum = 0x7f090014;

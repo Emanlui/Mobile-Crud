@@ -12209,14 +12209,14 @@ namespace Registro_y_control_de_extintores_Movil
 			// aapt resource value: 0x7F080130
 			public const int textEnd = 2131231024;
 			
-			// aapt resource value: 0x7F080143
-			public const int textinput_counter = 2131231043;
+			// aapt resource value: 0x7F08013A
+			public const int textinput_counter = 2131231034;
 			
-			// aapt resource value: 0x7F080144
-			public const int textinput_error = 2131231044;
+			// aapt resource value: 0x7F08013B
+			public const int textinput_error = 2131231035;
 			
-			// aapt resource value: 0x7F080145
-			public const int textinput_helper_text = 2131231045;
+			// aapt resource value: 0x7F08013C
+			public const int textinput_helper_text = 2131231036;
 			
 			// aapt resource value: 0x7F080131
 			public const int textSpacerNoButtons = 2131231025;
@@ -12234,64 +12234,37 @@ namespace Registro_y_control_de_extintores_Movil
 			public const int textView10 = 2131231029;
 			
 			// aapt resource value: 0x7F080136
-			public const int textView11 = 2131231030;
+			public const int textView2 = 2131231030;
 			
 			// aapt resource value: 0x7F080137
-			public const int textView12 = 2131231031;
+			public const int textView3 = 2131231031;
 			
 			// aapt resource value: 0x7F080138
-			public const int textView13 = 2131231032;
+			public const int text_input_end_icon = 2131231032;
 			
 			// aapt resource value: 0x7F080139
-			public const int textView2 = 2131231033;
-			
-			// aapt resource value: 0x7F08013A
-			public const int textView3 = 2131231034;
-			
-			// aapt resource value: 0x7F08013B
-			public const int textView4 = 2131231035;
-			
-			// aapt resource value: 0x7F08013C
-			public const int textView5 = 2131231036;
+			public const int text_input_start_icon = 2131231033;
 			
 			// aapt resource value: 0x7F08013D
-			public const int textView6 = 2131231037;
+			public const int time = 2131231037;
 			
 			// aapt resource value: 0x7F08013E
-			public const int textView7 = 2131231038;
+			public const int title = 2131231038;
 			
 			// aapt resource value: 0x7F08013F
-			public const int textView8 = 2131231039;
+			public const int titleDividerNoCustom = 2131231039;
 			
 			// aapt resource value: 0x7F080140
-			public const int textView9 = 2131231040;
+			public const int title_template = 2131231040;
 			
 			// aapt resource value: 0x7F080141
-			public const int text_input_end_icon = 2131231041;
+			public const int toolbar = 2131231041;
 			
 			// aapt resource value: 0x7F080142
-			public const int text_input_start_icon = 2131231042;
+			public const int top = 2131231042;
 			
-			// aapt resource value: 0x7F080146
-			public const int time = 2131231046;
-			
-			// aapt resource value: 0x7F080147
-			public const int title = 2131231047;
-			
-			// aapt resource value: 0x7F080148
-			public const int titleDividerNoCustom = 2131231048;
-			
-			// aapt resource value: 0x7F080149
-			public const int title_template = 2131231049;
-			
-			// aapt resource value: 0x7F08014A
-			public const int toolbar = 2131231050;
-			
-			// aapt resource value: 0x7F08014B
-			public const int top = 2131231051;
-			
-			// aapt resource value: 0x7F08014C
-			public const int topPanel = 2131231052;
+			// aapt resource value: 0x7F080143
+			public const int topPanel = 2131231043;
 			
 			// aapt resource value: 0x7F080008
 			public const int TOP_END = 2131230728;
@@ -12299,56 +12272,56 @@ namespace Registro_y_control_de_extintores_Movil
 			// aapt resource value: 0x7F080009
 			public const int TOP_START = 2131230729;
 			
+			// aapt resource value: 0x7F080144
+			public const int touch_outside = 2131231044;
+			
+			// aapt resource value: 0x7F080145
+			public const int transition_current_scene = 2131231045;
+			
+			// aapt resource value: 0x7F080146
+			public const int transition_layout_save = 2131231046;
+			
+			// aapt resource value: 0x7F080147
+			public const int transition_position = 2131231047;
+			
+			// aapt resource value: 0x7F080148
+			public const int transition_scene_layoutid_cache = 2131231048;
+			
+			// aapt resource value: 0x7F080149
+			public const int transition_transform = 2131231049;
+			
+			// aapt resource value: 0x7F08014A
+			public const int @unchecked = 2131231050;
+			
+			// aapt resource value: 0x7F08014B
+			public const int uniform = 2131231051;
+			
+			// aapt resource value: 0x7F08014C
+			public const int unlabeled = 2131231052;
+			
 			// aapt resource value: 0x7F08014D
-			public const int touch_outside = 2131231053;
+			public const int up = 2131231053;
 			
 			// aapt resource value: 0x7F08014E
-			public const int transition_current_scene = 2131231054;
+			public const int useLogo = 2131231054;
 			
 			// aapt resource value: 0x7F08014F
-			public const int transition_layout_save = 2131231055;
+			public const int view_offset_helper = 2131231055;
 			
 			// aapt resource value: 0x7F080150
-			public const int transition_position = 2131231056;
+			public const int view_tree_saved_state_registry_owner = 2131231056;
 			
 			// aapt resource value: 0x7F080151
-			public const int transition_scene_layoutid_cache = 2131231057;
+			public const int visible = 2131231057;
 			
 			// aapt resource value: 0x7F080152
-			public const int transition_transform = 2131231058;
+			public const int visible_removing_fragment_view_tag = 2131231058;
 			
 			// aapt resource value: 0x7F080153
-			public const int @unchecked = 2131231059;
+			public const int withText = 2131231059;
 			
 			// aapt resource value: 0x7F080154
-			public const int uniform = 2131231060;
-			
-			// aapt resource value: 0x7F080155
-			public const int unlabeled = 2131231061;
-			
-			// aapt resource value: 0x7F080156
-			public const int up = 2131231062;
-			
-			// aapt resource value: 0x7F080157
-			public const int useLogo = 2131231063;
-			
-			// aapt resource value: 0x7F080158
-			public const int view_offset_helper = 2131231064;
-			
-			// aapt resource value: 0x7F080159
-			public const int view_tree_saved_state_registry_owner = 2131231065;
-			
-			// aapt resource value: 0x7F08015A
-			public const int visible = 2131231066;
-			
-			// aapt resource value: 0x7F08015B
-			public const int visible_removing_fragment_view_tag = 2131231067;
-			
-			// aapt resource value: 0x7F08015C
-			public const int withText = 2131231068;
-			
-			// aapt resource value: 0x7F08015D
-			public const int wrap_content = 2131231069;
+			public const int wrap_content = 2131231060;
 			
 			static Id()
 			{
