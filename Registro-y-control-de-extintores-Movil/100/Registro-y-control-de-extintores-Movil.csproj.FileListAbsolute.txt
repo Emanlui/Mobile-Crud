@@ -663,3 +663,4 @@ C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\androidx\proguard\b8436cac-f55f-452d-a4d1-944a680a6862.txt
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\androidx\proguard\d3848bfa-efe3-46f7-9c51-5c6a4b2cb07d.txt
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\androidx\proguard\f3e428f3-ad88-489c-b8ee-0abd9f09c255.txt
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\linea.jpg
