@@ -85,8 +85,50 @@ namespace Registro_y_control_de_extintores_Movil.Models
                 cmd.CommandText = "Select * from extintor;";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
-                MySqlCommand comando = new MySqlCommand("Select * from extintor;", conexion.con);
-                MySqlDataReader registros = comando.ExecuteReader();
+                MySqlDataReader registros = cmd.ExecuteReader();
+                while (registros.Read())
+                {
+                    Extintor e = new Extintor();
+                    e.Activo = registros["activo"].ToString();
+                    e.Tipo = registros["tipo"].ToString();
+                    e.Ubicacion_geografica = registros["ubicacion_geografica"].ToString();
+                    e.Ubicacion = registros["ubicacion"].ToString();
+                    e.Agente_extintor = registros["agente_extintor"].ToString();
+                    e.Capacidad = (int)registros["capacidad"];
+                    e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
+                    e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
+                    e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    e.Presion = (Boolean)registros["presion"];
+                    e.Rotulacion = (int)registros["rotulacion"];
+                    e.Acceso_a_extintor = (Boolean)registros["acceso_a_extintor"];
+                    e.Condicion_extintor = (Boolean)registros["condicion_extintor"];
+                    e.Seguro_y_marchamo = (Boolean)registros["seguro_y_marchamo"];
+                    e.Collarin = (Boolean)registros["collarin"];
+                    e.Condicion_manguera = (Boolean)registros["condicion_manguera"];
+                    e.Condicion_boquilla = (Boolean)registros["condicion_boquilla"];
+                    System.Console.WriteLine(e.ToString());
+                    lista_de_extintores.Add(e);
+                }
+
+                conexion.con.Close();
+            }
+
+            return lista_de_extintores;
+        }
+
+        internal List<Extintor> ObtenerRegistroPorActivo(string text)
+        {
+            List<Extintor> lista_de_extintores = new List<Extintor>();
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+
+                cmd.CommandText = "SELECT * FROM extintor WHERE activo = @activo";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+                cmd.Parameters.Add("@activo", MySqlDbType.Text).Value = text;
+                MySqlDataReader registros = cmd.ExecuteReader();
                 while (registros.Read())
                 {
                     Extintor e = new Extintor();
