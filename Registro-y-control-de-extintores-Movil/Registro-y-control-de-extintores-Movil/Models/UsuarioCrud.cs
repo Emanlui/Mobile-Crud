@@ -1,0 +1,60 @@
+﻿using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using MySqlConnector;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+
+namespace Registro_y_control_de_extintores_Movil.Models
+{
+    class UsuarioCrud
+    {
+        public void cambiarContraseña(string contrasena, string dato)
+        {
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+          
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "UPDATE usuario SET usuario.password = @pass WHERE correo = @correo; ";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+                cmd.Parameters.Add("@pass", MySqlDbType.Text).Value = contrasena;
+                cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = dato;
+                cmd.ExecuteNonQuery();
+                conexion.con.Close();
+            }
+        }
+
+        public Boolean verificacionDeUsuario(string correo)
+        {
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+
+                cmd.CommandText = "SELECT * FROM usuario WHERE correo = @correo";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+                cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = correo;
+                MySqlDataReader registros = cmd.ExecuteReader();
+                int cont = 0;
+                while (registros.Read())
+                {
+                    System.Console.WriteLine(correo);
+                    System.Console.WriteLine(cont);
+                    cont = cont + 1;
+                }
+                conexion.con.Close();
+                if (cont > 0) return true;
+                return false;
+            }
+        }
+    }
+}

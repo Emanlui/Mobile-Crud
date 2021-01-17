@@ -20,7 +20,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             SetContentView(Resource.Layout.login);
 
             Button button = FindViewById<Button>(Resource.Id.loginButton);
-            button.Click += delegate { StartActivity(typeof(menuPrincipal)); };
+            button.Click += delegate { StartActivity(typeof(loginForm)); };
 
             TextView text = FindViewById<TextView>(Resource.Id.olvidarButton);
             text.Click += delegate { StartActivity(typeof(recuperarContrasena)); };

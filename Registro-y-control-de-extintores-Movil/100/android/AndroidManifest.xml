@@ -16,6 +16,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:name="crc64411566ff043543ac.loginForm" android:label="loginForm" />
+    <activity android:name="crc64411566ff043543ac.MensajeRestablecer" android:label="MensajeRestablecer" />
     <activity android:name="crc64411566ff043543ac.menuPrincipal" android:label="menuPrincipal" />
     <activity android:name="crc64411566ff043543ac.recuperarContrasena" android:label="recuperarContrasena" />
     <activity android:name="crc64411566ff043543ac.vistaExtintores" android:label="vistaExtintores" />

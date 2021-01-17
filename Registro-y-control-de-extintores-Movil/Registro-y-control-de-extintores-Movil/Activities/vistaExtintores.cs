@@ -444,7 +444,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv14.SetText(proximo_mantenimiento.ToCharArray(), 1, proximo_mantenimiento.Length - 1);
                     tv14.SetTextColor(Android.Graphics.Color.White);
 
-                    System.Console.WriteLine(posicion);
+                    //System.Console.WriteLine(posicion);
                     lista_de_layouts[posicion].AddView(tv14);
                     posicion++;
 

@@ -73,12 +73,15 @@
     <Compile Include="Activities\galeria.cs" />
     <Compile Include="Activities\informacionEnviada.cs" />
     <Compile Include="Activities\login.cs" />
+    <Compile Include="Activities\loginForm.cs" />
+    <Compile Include="Activities\MensajeRestablecer.cs" />
     <Compile Include="Activities\menuPrincipal.cs" />
     <Compile Include="Activities\recuperarContrasena.cs" />
     <Compile Include="Activities\vistaExtintores.cs" />
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Extintor.cs" />
     <Compile Include="Models\ExtintorCrud.cs" />
+    <Compile Include="Models\UsuarioCrud.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -229,6 +232,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\MensajeDeError.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MensajeRestablecer.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\loginForm.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
