@@ -20,23 +20,63 @@ namespace Registro_y_control_de_extintores_Movil.Activities
     public class galeria : Activity
     {
         LinearLayout layout;
+        ExtintorCrud ec = new ExtintorCrud();
+        Extintor extintorTemporal;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.galeria);
 
             layout = FindViewById<LinearLayout>(Resource.Id.galeriaLayout);
-
-            ExtintorCrud ec = new ExtintorCrud();
+            TextView buscarBtn = FindViewById<TextView>(Resource.Id.buscarButton);
+            buscarBtn.Click += BtnBuscar_Click;
             List<Extintor> lista_de_extintores = ec.ObtenerRegistros();
 
             poblarGaleria(lista_de_extintores);
 
         }
 
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+
+            layout.RemoveAllViews();
+            TextView activo = FindViewById<TextView>(Resource.Id.buscarText);
+            poblarGaleria(ec.ObtenerRegistroPorActivo(activo.Text));
+            activo.Text = "";
+        }
+
+        private void bottonEliminarSeleccionado(object sender, EventArgs e, Extintor extintor)
+        {
+            ec.EliminarImagen(extintor.Activo);
+            layout.RemoveAllViews();
+            poblarGaleria(ec.ObtenerRegistros());
+            System.Console.WriteLine(extintor.Activo);
+        }
+
+        private void bottonModificarSeleccionado(object sender, EventArgs e, Extintor extintor)
+        {
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            extintorTemporal = extintor;
+            StartActivityForResult(intent, 0);
+
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            Bitmap bitmap = (Bitmap)data.Extras.Get("data");
+            //imageView.SetImageBitmap(bitmap);
+
+            ExtintorCrud ec = new ExtintorCrud();
+            ec.ModificarFotoExtintor(bitmap, extintorTemporal.Activo);
+            layout.RemoveAllViews();
+            poblarGaleria(ec.ObtenerRegistros());
+
+        }
         private void poblarGaleria(List<Extintor> lista_de_extintores)
         {
-            System.Console.WriteLine(lista_de_extintores.Count);
+            
             if (lista_de_extintores.Count == 0)
             {
 
@@ -55,7 +95,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
                     GridLayout ll = new GridLayout(this);
                     ll.ColumnCount = 1;
-                    ll.RowCount = 4;
+                    ll.RowCount = 6;
                     LinearLayout.LayoutParams layout_param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
                     layout_param.LeftMargin = 100;
                     layout_param.RightMargin = 100;
@@ -68,7 +108,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
                     LinearLayout[] lista_de_layouts = new LinearLayout[16];
 
-                    for (int pos = 0; pos < 4; pos++)
+                    for (int pos = 0; pos < 6; pos++)
                     {
                         LinearLayout.LayoutParams layout_grid = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
                         
@@ -85,16 +125,16 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     string activo = " Activo: " + extintor.Activo;
                     tv1.SetText(activo.ToCharArray(), 1, activo.Length - 1);
                     tv1.SetTextColor(Android.Graphics.Color.White);
+                    tv1.Gravity = GravityFlags.CenterHorizontal;
                     lista_de_layouts[posicion].Orientation = Orientation.Horizontal;
                     lista_de_layouts[posicion].AddView(tv1);
-
+                    posicion++;
                     ImageView iv = new ImageView(this);
                     
                     LinearLayout.LayoutParams layout_image = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
                     layout_image.Height = 200;
-                    layout_image.Width = 200;
                     layout_image.Gravity = GravityFlags.Center;
-                    layout_image.TopMargin = 60;
+                    layout_image.TopMargin = 20;
                     iv.LayoutParameters = layout_image;
                     if (extintor.Tipo == "AB")
                     {
@@ -125,18 +165,48 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     }
                     posicion++;
 
-                    LinearLayout.LayoutParams button_margin = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
+
                     
+                    try
+                    {
+                        ImageView imagen_extintor = new ImageView(this);
+                        LinearLayout.LayoutParams imagen_extintor_layout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
+                        imagen_extintor_layout.Gravity = GravityFlags.Center;
+                        imagen_extintor_layout.TopMargin = 60;
+                        imagen_extintor_layout.Height = 500;
+                        imagen_extintor.LayoutParameters = imagen_extintor_layout;
+                        Bitmap bf = BitmapFactory.DecodeByteArray(extintor.Imagen, 0, extintor.Imagen.Length);
+                        imagen_extintor.SetImageBitmap(bf);
+                        lista_de_layouts[posicion].AddView(imagen_extintor);
+                    }
+                    catch (System.NullReferenceException exception)
+                    {
+                        TextView sinImagen = new TextView(this);
+                        LinearLayout.LayoutParams imagen_extintor_layout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
+                        imagen_extintor_layout.Gravity = GravityFlags.Center;
+                        sinImagen.SetTextColor(Color.White);
+                        sinImagen.Gravity = GravityFlags.CenterHorizontal;
+                        sinImagen.LayoutParameters = imagen_extintor_layout;
+                        sinImagen.Text = "***No posee imagen***";
+                        lista_de_layouts[posicion].AddView(sinImagen);
+                        // Error
+                    }
+                    
+                    posicion++;
+
+                    LinearLayout.LayoutParams button_margin = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
                     
                     button_margin.Gravity = GravityFlags.Center;
                     
                     Button actualizar = new Button(this);
+                    actualizar.Click += (sender, EventArgs) => { bottonModificarSeleccionado(sender, EventArgs, extintor); };
                     actualizar.Text = "actualizar";
                     actualizar.SetTextColor(Color.White);
                     actualizar.SetBackgroundColor(Color.Black); 
                     actualizar.LayoutParameters = button_margin;
 
                     Button eliminar= new Button(this);
+                    eliminar.Click += (sender, EventArgs) => { bottonEliminarSeleccionado(sender, EventArgs, extintor); };
                     eliminar.LayoutParameters = button_margin;
                     eliminar.Text = "eliminar";
                     eliminar.SetTextColor(Color.White);
@@ -147,8 +217,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     lista_de_layouts[posicion].AddView(eliminar);
                     posicion++;
 
-
-                    for (int i = 0; i < 3; i++) ll.AddView(lista_de_layouts[i]);
+                    for (int i = 0; i < 5; i++) ll.AddView(lista_de_layouts[i]);
 
 
                     ImageView linea = new ImageView(this);
@@ -158,24 +227,6 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     layout.AddView(ll);
                 }
             }
-        }
-
-        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
-        {
-            //base.OnActivityResult(requestCode, resultCode, data);
-            
-            Bitmap bitmap = (Bitmap)data.Extras.Get("data");
-            //imageView.SetImageBitmap(bitmap);
-                 
-            //ExtintorCrud ec = new ExtintorCrud();
-            //ec.Crear_Extintor(bitmap);
-            
-
-        }
-        private void BtnCamera_Click(object sender, System.EventArgs e)
-        {
-            //Intent intent = new Intent(MediaStore.ActionImageCapture);
-            //StartActivityForResult(intent, 0);
         }
     }
 }
