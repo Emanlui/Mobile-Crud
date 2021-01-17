@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Registro_y_control_de_extintores_Movil.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,28 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.loginForm);
             Button button = FindViewById<Button>(Resource.Id.Login);
-            button.Click += delegate { StartActivity(typeof(menuPrincipal)); };
+            button.Click += loginClick;
 
+        }
+
+        private void loginClick(object sender, EventArgs e)
+        {
+            EditText usuario = FindViewById<EditText>(Resource.Id.usuarioText);
+            EditText pass = FindViewById<EditText>(Resource.Id.contrasenaText);
+
+            UsuarioCrud uc = new UsuarioCrud();
+
+            if (uc.verificacionDeLogin(usuario.Text, pass.Text))
+            {
+                Context mContext = Android.App.Application.Context;
+                AppPreferences ap = new AppPreferences(mContext);
+                ap.guardarCorreoPass(usuario.Text, pass.Text);
+                StartActivity(typeof(menuPrincipal));
+            }
+            else
+            {
+                Toast.MakeText(this, "El correo o contraseña incorrecta", ToastLength.Short).Show();
+            }
         }
     }
 }
