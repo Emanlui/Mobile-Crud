@@ -23,28 +23,24 @@ namespace Registro_y_control_de_extintores_Movil.Models
         public byte[] obtenerByteArray(Bitmap bm)
         {
             System.IO.MemoryStream bs = new System.IO.MemoryStream();
-            bm.Compress(Bitmap.CompressFormat.Png, 100, bs);
+            bm.Compress(Bitmap.CompressFormat.Jpeg, 100, bs);
             return bs.ToArray();
-        }
-        public void Crear_Extintor(Bitmap imagen)
+        } 
+        internal void EliminarImagen(string activo)
         {
-            
             Conexion conexion = new Conexion();
             conexion.con.Open();
-
-            Byte[] arreglo_imagen = obtenerByteArray(imagen);
-
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE extintor SET imagen = @imagen_a_insertar WHERE id = 1;";
+                cmd.CommandText = "UPDATE extintor SET imagen = null WHERE activo=@activo; ";
                 cmd.CommandType = CommandType.Text;
-                cmd.Connection = conexion.con; 
-                cmd.Parameters.Add("@imagen_a_insertar", MySqlDbType.Blob).Value = arreglo_imagen;
-                
+                cmd.Connection = conexion.con;
+
+                cmd.Parameters.Add("@activo", MySqlDbType.VarChar).Value = activo;
+
                 cmd.ExecuteNonQuery();
                 conexion.con.Close();
             }
-           
         }
 
         internal List<Extintor> ObtenerRegistros()
@@ -106,6 +102,13 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Collarin = (int)(ulong)registros["collarin"];
                     e.Condicion_manguera = (int)(ulong)registros["condicion_manguera"];
                     e.Condicion_boquilla = (int)(ulong)registros["condicion_boquilla"];
+                    try { 
+                        e.Imagen = (byte[])registros["imagen"];
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Imagen = null;
+                    }
                     System.Console.WriteLine(e.ToString());
                     lista_de_extintores.Add(e);
                 }
@@ -114,6 +117,27 @@ namespace Registro_y_control_de_extintores_Movil.Models
             }
 
             return lista_de_extintores;
+        }
+
+        internal void ModificarFotoExtintor(Bitmap bitmap, string activo)
+        {
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+
+            Byte[] arreglo_imagen = obtenerByteArray(bitmap);
+
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "UPDATE extintor SET imagen = @imagen_a_insertar WHERE activo = @activo;";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+                cmd.Parameters.Add("@imagen_a_insertar", MySqlDbType.Blob).Value = arreglo_imagen;
+                cmd.Parameters.Add("@activo", MySqlDbType.Text).Value = activo;
+
+                cmd.ExecuteNonQuery();
+                conexion.con.Close();
+            }
+
         }
 
         internal List<Extintor> ObtenerRegistroPorActivo(string text)
@@ -149,7 +173,15 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Collarin = (int)(ulong)registros["collarin"];
                     e.Condicion_manguera = (int)(ulong)registros["condicion_manguera"];
                     e.Condicion_boquilla = (int)(ulong)registros["condicion_boquilla"];
-                    System.Console.WriteLine(e.ToString());
+                    try
+                    {
+                        e.Imagen = (byte[])registros["imagen"];
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Imagen = null;
+                    }
+                    
                     lista_de_extintores.Add(e);
                 }
 
