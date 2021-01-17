@@ -25,8 +25,6 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.vistaExtintores);
-
-
             layout = FindViewById<LinearLayout>(Resource.Id.extintorLayout);
             ExtintorCrud ec = new ExtintorCrud();
             List<Extintor> lista_de_extintores = ec.ObtenerRegistros();
@@ -56,7 +54,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             {
 
                 TextView noHayRegistros = new TextView(this);
-                string mensaje = " ***No existen extintores con dicho activo***";
+                string mensaje = " ***No existen extintores***";
                 noHayRegistros.SetText(mensaje.ToCharArray(), 0, mensaje.Length);
                 noHayRegistros.SetTextColor(Android.Graphics.Color.White);
                 noHayRegistros.Gravity = GravityFlags.CenterHorizontal;

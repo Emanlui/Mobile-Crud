@@ -73,6 +73,7 @@ resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\strings.xml
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\styles.xml
 resources;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\values\values.xml
+ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
 ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\informacionenviada.xml
 ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\mensajedeerror.xml
 ScrollView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\vistaextintores.xml

@@ -38,16 +38,32 @@
                 android:layout_marginTop="9.0dp"
                 android:layout_marginBottom="6.5dp" />
         </LinearLayout>
-        <Button
-            android:text="Tomar foto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fotoButton" />
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="match_parent"
+            android:src="@android:drawable/divider_horizontal_dark"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/imagen" />
+            android:scaleType="fitXY"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom=".1dp"
+            android:paddingTop=".2dp"
+            android:background="#FFFFFF" 
+            android:id="@+id/lineaImage"/>
+        <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView1" >
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/galeriaLayout" />
+        </ScrollView>
+        
     </LinearLayout>
     
 </LinearLayout>

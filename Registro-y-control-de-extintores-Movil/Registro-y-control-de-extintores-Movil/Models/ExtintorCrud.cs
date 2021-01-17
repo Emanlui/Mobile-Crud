@@ -47,6 +47,11 @@ namespace Registro_y_control_de_extintores_Movil.Models
            
         }
 
+        internal List<Extintor> ObtenerGaleria()
+        {
+            throw new NotImplementedException();
+        }
+
         internal List<Extintor> ObtenerRegistros()
         {
 
