@@ -15,6 +15,8 @@ background;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registr
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\correo.xml
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
+Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\loginform.xml
+Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\mensajerestablecer.xml
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
 Button;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\vistaextintores.xml
 cache-path;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -32,6 +34,7 @@ crc64720bb2db43a66fe9.FormsViewPager;C:\Users\emanu\Desktop\Registro-y-control-d
 declare-styleable;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\44\jl\res\values\attrs.xml
 EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\correo.xml
 EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
+EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\loginform.xml
 EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
 EditText;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\vistaextintores.xml
 external-cache-path;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -55,7 +58,9 @@ LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Regis
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\galeria.xml
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\informacionenviada.xml
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
+LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\loginform.xml
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\mensajedeerror.xml
+LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\mensajerestablecer.xml
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
 LinearLayout;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\vistaextintores.xml
@@ -84,7 +89,9 @@ TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\contacto.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\correo.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\login.xml
+TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\loginform.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\mensajedeerror.xml
+TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\mensajerestablecer.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\menuprincipal.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\recuperarcontrasena.xml
 TextView;C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\layout\vistaextintores.xml

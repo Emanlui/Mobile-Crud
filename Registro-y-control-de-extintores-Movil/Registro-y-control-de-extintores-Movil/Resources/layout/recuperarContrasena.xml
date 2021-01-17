@@ -25,7 +25,7 @@
             android:layout_height="38.5dp"
             android:textColor="#000000"
             android:background="#FFFFFF"
-            android:id="@+id/editText1"
+            android:id="@+id/usuarioCorreo"
             android:layout_marginTop="47.0dp"
             android:layout_marginRight="23.5dp"
             android:layout_marginLeft="17.0dp"
