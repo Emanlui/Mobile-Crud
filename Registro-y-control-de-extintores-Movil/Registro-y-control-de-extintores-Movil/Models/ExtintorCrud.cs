@@ -98,14 +98,14 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
                     e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
                     e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
-                    e.Presion = (Boolean)registros["presion"];
+                    e.Presion = (int)(ulong)registros["presion"];
                     e.Rotulacion = (int)registros["rotulacion"];
-                    e.Acceso_a_extintor = (Boolean)registros["acceso_a_extintor"];
-                    e.Condicion_extintor = (Boolean)registros["condicion_extintor"];
-                    e.Seguro_y_marchamo = (Boolean)registros["seguro_y_marchamo"];
-                    e.Collarin = (Boolean)registros["collarin"];
-                    e.Condicion_manguera = (Boolean)registros["condicion_manguera"];
-                    e.Condicion_boquilla = (Boolean)registros["condicion_boquilla"];
+                    e.Acceso_a_extintor = (int)(ulong)registros["acceso_a_extintor"];
+                    e.Condicion_extintor = (int)(ulong)registros["condicion_extintor"];
+                    e.Seguro_y_marchamo = (int)(ulong)registros["seguro_y_marchamo"];
+                    e.Collarin = (int)(ulong)registros["collarin"];
+                    e.Condicion_manguera = (int)(ulong)registros["condicion_manguera"];
+                    e.Condicion_boquilla = (int)(ulong)registros["condicion_boquilla"];
                     System.Console.WriteLine(e.ToString());
                     lista_de_extintores.Add(e);
                 }
@@ -141,14 +141,14 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
                     e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
                     e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
-                    e.Presion = (Boolean)registros["presion"];
+                    e.Presion = (int)(ulong)registros["presion"];
                     e.Rotulacion = (int)registros["rotulacion"];
-                    e.Acceso_a_extintor = (Boolean)registros["acceso_a_extintor"];
-                    e.Condicion_extintor = (Boolean)registros["condicion_extintor"];
-                    e.Seguro_y_marchamo = (Boolean)registros["seguro_y_marchamo"];
-                    e.Collarin = (Boolean)registros["collarin"];
-                    e.Condicion_manguera = (Boolean)registros["condicion_manguera"];
-                    e.Condicion_boquilla = (Boolean)registros["condicion_boquilla"];
+                    e.Acceso_a_extintor = (int)(ulong)registros["acceso_a_extintor"];
+                    e.Condicion_extintor = (int)(ulong)registros["condicion_extintor"];
+                    e.Seguro_y_marchamo = (int)(ulong)registros["seguro_y_marchamo"];
+                    e.Collarin = (int)(ulong)registros["collarin"];
+                    e.Condicion_manguera = (int)(ulong)registros["condicion_manguera"];
+                    e.Condicion_boquilla = (int)(ulong)registros["condicion_boquilla"];
                     System.Console.WriteLine(e.ToString());
                     lista_de_extintores.Add(e);
                 }

@@ -22,20 +22,24 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             ImageView salir = FindViewById<ImageView>(Resource.Id.salirImage);
             salir.Click += delegate { StartActivity(typeof(login)); };
 
-            ImageView extintores = FindViewById<ImageView>(Resource.Id.extintoresImage);
+            LinearLayout extintores = FindViewById<LinearLayout>(Resource.Id.extintoresLayout);
             extintores.Click += delegate { StartActivity(typeof(vistaExtintores)); };
 
-            ImageView galeria = FindViewById<ImageView>(Resource.Id.galeriaImage);
+            LinearLayout galeria = FindViewById<LinearLayout>(Resource.Id.galeriaLayout);
             galeria.Click += delegate { StartActivity(typeof(galeria)); };
 
-            ImageView informacion = FindViewById<ImageView>(Resource.Id.informacionImage);
+            LinearLayout informacion = FindViewById<LinearLayout>(Resource.Id.informacionLayout);
             informacion.Click += delegate { StartActivity(typeof(informacionEnviada)); };
 
-            ImageView contacto = FindViewById<ImageView>(Resource.Id.contactosImage);
+            LinearLayout contacto = FindViewById<LinearLayout>(Resource.Id.contactosLayout);
             contacto.Click += delegate { StartActivity(typeof(contacto)); };
 
-            ImageView acerca = FindViewById<ImageView>(Resource.Id.acercaImage);
+            LinearLayout acerca = FindViewById<LinearLayout>(Resource.Id.acercaLayout);
             acerca.Click += delegate { StartActivity(typeof(acercaDe)); };
+
+            LinearLayout correoLayout = FindViewById<LinearLayout>(Resource.Id.correoLayout);
+            correoLayout.Click += delegate { StartActivity(typeof(correo)); };
+
         }
     }
 }
