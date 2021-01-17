@@ -25,7 +25,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.vistaExtintores);
-            
+
 
             layout = FindViewById<LinearLayout>(Resource.Id.extintorLayout);
             ExtintorCrud ec = new ExtintorCrud();
@@ -42,18 +42,19 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             LinearLayout lv = FindViewById<LinearLayout>(Resource.Id.extintorLayout);
             lv.RemoveAllViews();
             TextView activo = FindViewById<TextView>(Resource.Id.activoText);
-            
+
             ExtintorCrud ec = new ExtintorCrud();
             List<Extintor> lista_de_extintores = ec.ObtenerRegistroPorActivo(activo.Text);
             poblarLinearLayout(lista_de_extintores);
+            activo.Text = "";
         }
 
         private void poblarLinearLayout(List<Extintor> lista_de_extintores)
         {
             System.Console.WriteLine(lista_de_extintores.Count);
-            if(lista_de_extintores.Count == 0)
+            if (lista_de_extintores.Count == 0)
             {
-               
+
                 TextView noHayRegistros = new TextView(this);
                 string mensaje = " ***No existen extintores con dicho activo***";
                 noHayRegistros.SetText(mensaje.ToCharArray(), 0, mensaje.Length);
@@ -63,10 +64,10 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             }
             else
             {
-            
+
                 foreach (var extintor in lista_de_extintores)
                 {
-                
+
                     GridLayout ll = new GridLayout(this);
                     ll.ColumnCount = 1;
                     ll.RowCount = 14;
@@ -85,16 +86,16 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     for (int pos = 0; pos < 16; pos++)
                     {
                         LinearLayout.LayoutParams layout_grid = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
-                    
-                    
+
+
                         layout_grid.Gravity = GravityFlags.Center;
                         layout_grid.SetMargins(MARGIN, MARGIN, MARGIN, MARGIN);
                         lista_de_layouts[pos] = new LinearLayout(this);
                         lista_de_layouts[pos].LayoutParameters = layout_grid;
-                    
+
                     }
 
-                
+
 
                     ImageView iv = new ImageView(this);
                     LinearLayout.LayoutParams layout_image = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
@@ -108,15 +109,17 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                         iv.SetImageResource(Resource.Drawable.extintoresab);
                         lista_de_layouts[posicion].AddView(iv);
                         posicion++;
-                    
-                    }else if(extintor.Tipo == "ABC")
+
+                    }
+                    else if (extintor.Tipo == "ABC")
                     {
 
                         iv.SetImageResource(Resource.Drawable.extintoresabc);
                         lista_de_layouts[posicion].AddView(iv);
                         posicion++;
 
-                    }else if(extintor.Tipo == "BC")
+                    }
+                    else if (extintor.Tipo == "BC")
                     {
 
                         iv.SetImageResource(Resource.Drawable.extintoresbc);
@@ -135,18 +138,18 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     LinearLayout.LayoutParams layout_grid_elements = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
 
                     TextView tv1 = new TextView(this);
-                    string tipo = " Tipo: " + extintor.Tipo;
-                    tv1.SetText(tipo.ToCharArray(), 1, tipo.Length - 1);
+                    string activo = " Activo: " + extintor.Activo;
+                    tv1.SetText(activo.ToCharArray(), 1, activo.Length - 1);
                     tv1.SetTextColor(Android.Graphics.Color.White);
                     lista_de_layouts[posicion].AddView(tv1);
                     posicion++;
 
                     TextView tv2 = new TextView(this);
                     string agente_extintor = " Agente: " + extintor.Agente_extintor;
-                    tv2.SetText(agente_extintor.ToCharArray(), 1, agente_extintor.Length-1);
+                    tv2.SetText(agente_extintor.ToCharArray(), 1, agente_extintor.Length - 1);
                     tv2.SetTextColor(Android.Graphics.Color.White);
                     lista_de_layouts[posicion].AddView(tv2);
-                    posicion++; 
+                    posicion++;
 
                     TextView tv3 = new TextView(this);
                     string capacidad = " Capacidad: " + extintor.Capacidad.ToString();
@@ -178,7 +181,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv5_layout.LeftMargin = 30;
                     tv5.LayoutParameters = tv5_layout;
 
-                    if (extintor.Collarin)
+                    if (extintor.Collarin == 1)
                     {
                         tv5.SetText("Si ".ToCharArray(), 0, "Si".Length);
                         tv5.SetTextColor(Android.Graphics.Color.Green);
@@ -211,7 +214,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv6_layout.LeftMargin = 30;
                     tv6.LayoutParameters = tv6_layout;
 
-                    if (extintor.Condicion_manguera)
+                    if (extintor.Condicion_manguera == 1)
                     {
                         tv6.SetText("Buena ".ToCharArray(), 0, "Buena".Length);
                         tv6.SetTextColor(Android.Graphics.Color.Green);
@@ -256,10 +259,14 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                         tv8.SetText("No cuenta con rotulación ".ToCharArray(), 0, "No cuenta con rotulación".Length);
                         tv8.SetTextColor(Android.Graphics.Color.Yellow);
 
-                    } else if (extintor.Rotulacion == 0) {
+                    }
+                    else if (extintor.Rotulacion == 0)
+                    {
                         tv8.SetText("Incorrecta ".ToCharArray(), 0, "Incorrecta".Length);
                         tv8.SetTextColor(Android.Graphics.Color.Red);
-                    } else {
+                    }
+                    else
+                    {
                         tv8.SetText("Correcta ".ToCharArray(), 0, "Correcta".Length);
                         tv8.SetTextColor(Android.Graphics.Color.Green);
                     }
@@ -267,7 +274,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     l8.AddView(tv8);
                     lista_de_layouts[posicion].AddView(l8);
                     posicion++;
-                
+
                     //-----------------------------------------------------------------
 
                     TextView tv9 = new TextView(this);
@@ -284,7 +291,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv9_layout.LeftMargin = 30;
                     tv9.LayoutParameters = tv8_layout;
 
-                    if (extintor.Acceso_a_extintor)
+                    if (extintor.Acceso_a_extintor == 1)
                     {
                         tv9.SetText("Si ".ToCharArray(), 0, "Si".Length);
                         tv9.SetTextColor(Android.Graphics.Color.Green);
@@ -308,27 +315,27 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     LinearLayout l10 = new LinearLayout(this);
                     l10.LayoutParameters = layout_grid_elements;
                     l10.Orientation = Orientation.Horizontal;
-                
+
                     text10.SetText("Presión: ".ToCharArray(), 0, "Presión:".Length);
                     text10.SetTextColor(Android.Graphics.Color.White);
-                
+
                     tv10.SetText("Incorrecta ".ToCharArray(), 0, " Incorrecta".Length);
                     tv10.SetTextColor(Android.Graphics.Color.Red);
                     LinearLayout.LayoutParams tv10_layout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
                     tv10_layout.LeftMargin = 30;
                     tv10.LayoutParameters = tv10_layout;
 
-                    if (extintor.Presion == true)
+                    if (extintor.Presion == 1)
                     {
                         tv10.SetText("Correcta ".ToCharArray(), 0, "Correcta".Length);
                         tv10.SetTextColor(Android.Graphics.Color.Green);
                     }
                     l10.AddView(text10);
                     l10.AddView(tv10);
-                
+
 
                     lista_de_layouts[posicion].AddView(l10);
-            
+
                     posicion++;
 
                     //-----------------------------------------------------------------
@@ -347,7 +354,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv11_layout.LeftMargin = 30;
                     tv11.LayoutParameters = tv11_layout;
 
-                    if (extintor.Seguro_y_marchamo)
+                    if (extintor.Seguro_y_marchamo == 1)
                     {
                         tv11.SetText("Bien ".ToCharArray(), 0, "Bien".Length);
                         tv11.SetTextColor(Android.Graphics.Color.Green);
@@ -380,7 +387,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv12_layout.LeftMargin = 30;
                     tv12.LayoutParameters = tv12_layout;
 
-                    if (extintor.Condicion_extintor)
+                    if (extintor.Condicion_extintor == 1)
                     {
                         tv12.SetText("Buena ".ToCharArray(), 0, "Buena".Length);
                         tv12.SetTextColor(Android.Graphics.Color.Green);
@@ -413,7 +420,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     tv13_layout.LeftMargin = 30;
                     tv13.LayoutParameters = tv13_layout;
 
-                    if (extintor.Condicion_boquilla)
+                    if (extintor.Condicion_boquilla == 1)
                     {
                         tv13.SetText("Buena ".ToCharArray(), 0, "Buena".Length);
                         tv13.SetTextColor(Android.Graphics.Color.Green);
@@ -440,11 +447,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     System.Console.WriteLine(posicion);
                     lista_de_layouts[posicion].AddView(tv14);
                     posicion++;
-                
 
-                    for(int i = 0; i < 15; i++) ll.AddView(lista_de_layouts[i]);
 
-                
+                    for (int i = 0; i < 15; i++) ll.AddView(lista_de_layouts[i]);
+
+
                     ImageView linea = new ImageView(this);
                     linea.SetImageResource(Resource.Drawable.linea);
                     lista_de_layouts[posicion].AddView(linea);

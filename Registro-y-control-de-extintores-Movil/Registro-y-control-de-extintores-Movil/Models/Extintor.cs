@@ -34,21 +34,21 @@ namespace Registro_y_control_de_extintores_Movil.Models
 
         public string Proximo_mantenimiento { get; set; }
 
-        public Boolean Presion { get; set; }
+        public int Presion { get; set; }
 
         public int Rotulacion { get; set; }
 
-        public Boolean Acceso_a_extintor { get; set; }
+        public int Acceso_a_extintor { get; set; }
 
-        public Boolean Condicion_extintor { get; set; }
+        public int Condicion_extintor { get; set; }
 
-        public Boolean Seguro_y_marchamo { get; set; }
+        public int Seguro_y_marchamo { get; set; }
 
-        public Boolean Collarin { get; set; }
+        public int Collarin { get; set; }
 
-        public Boolean Condicion_manguera { get; set; }
+        public int Condicion_manguera { get; set; }
 
-        public Boolean Condicion_boquilla { get; set; }
+        public int Condicion_boquilla { get; set; }
 
         public Byte[] Imagen { get; set; }
 

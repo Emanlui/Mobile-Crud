@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Activities\acercaDe.cs" />
     <Compile Include="Activities\contacto.cs" />
+    <Compile Include="Activities\correo.cs" />
     <Compile Include="Activities\galeria.cs" />
     <Compile Include="Activities\informacionEnviada.cs" />
     <Compile Include="Activities\login.cs" />
@@ -220,6 +221,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\linea.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\correo.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MensajeDeError.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
