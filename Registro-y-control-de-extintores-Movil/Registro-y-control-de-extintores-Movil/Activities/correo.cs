@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Registro_y_control_de_extintores_Movil.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             mail.From = new MailAddress("emanuellejs1999@gmail.com");
             mail.To.Add("emanuellejs@hotmail.es");
             mail.Subject = textAsunto.Text;
-            mail.Body = textBody.Text;
+
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+            String body = "Este correo fue enviado por: " + ap.getCorreoKey() + " \n";
+            mail.Body = body + textBody.Text;
 
             // Archivos
             //System.Net.Mail.Attachment attachment;
@@ -60,13 +65,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             }
             catch(Exception exception)
             {
-                Dialog popupDialog = new Dialog(this);
-                popupDialog.SetContentView(Resource.Layout.MensajeDeError);
-                popupDialog.Window.SetSoftInputMode(SoftInput.AdjustResize);
-                popupDialog.Window.SetTitle("Error a la hora de enviar un correo");
-                popupDialog.Show();
-                popupDialog.Window.SetLayout(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
-                popupDialog.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
+                Toast.MakeText(this, "Error al enviar el correo electrónico", ToastLength.Short).Show();
                 StartActivity(typeof(menuPrincipal));
             }
 

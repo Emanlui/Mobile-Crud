@@ -5,6 +5,8 @@ public class MonoPackageManager_Resources {
 		"Registro-y-control-de-extintores-Movil.dll",
 		"FormsViewGroup.dll",
 		"MySqlConnector.dll",
+		"Plugin.Settings.Abstractions.dll",
+		"Plugin.Settings.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

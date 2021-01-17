@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Registro_y_control_de_extintores_Movil.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,21 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+
+            
             SetContentView(Resource.Layout.menuPrincipal);
 
+            UsuarioCrud uc = new UsuarioCrud();
+
+            TextView tv = FindViewById<TextView>(Resource.Id.centroText);
+            string mensaje = "Centro de Trabajo: " + uc.getCentroDeTrabajo(ap.getCorreoKey());
+            tv.Text = mensaje;
+
             ImageView salir = FindViewById<ImageView>(Resource.Id.salirImage);
-            salir.Click += delegate { StartActivity(typeof(login)); };
+            salir.Click += salirButton;
 
             LinearLayout extintores = FindViewById<LinearLayout>(Resource.Id.extintoresLayout);
             extintores.Click += delegate { StartActivity(typeof(vistaExtintores)); };
@@ -39,7 +51,16 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
             LinearLayout correoLayout = FindViewById<LinearLayout>(Resource.Id.correoLayout);
             correoLayout.Click += delegate { StartActivity(typeof(correo)); };
+            
 
+        }
+
+        private void salirButton(object sender, EventArgs e)
+        {
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+            ap.guardarCorreoPass("", "");
+            StartActivity(typeof(login)); 
         }
     }
 }

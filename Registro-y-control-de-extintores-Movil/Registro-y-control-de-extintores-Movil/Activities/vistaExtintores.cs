@@ -49,7 +49,6 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
         private void poblarLinearLayout(List<Extintor> lista_de_extintores)
         {
-            System.Console.WriteLine(lista_de_extintores.Count);
             if (lista_de_extintores.Count == 0)
             {
 
