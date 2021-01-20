@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView1" >
+        <LinearLayout
+        android:background="#063E65"
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1">
+        
+        
+        <TextView
+            android:gravity="center_horizontal"
+            android:textColor="#D3D3D3"
+            android:text="Actualizar extintor"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:layout_marginTop="6.0dp" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="43.5dp"
+                android:id="@+id/linearLayout3"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Activo:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent"
+                    android:id="@+id/activoText"
+                    android:layout_marginLeft="10.0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="56.0dp"
+                android:id="@+id/linearLayout4"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Ubicación Geográfica:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="71.5dp"
+                    android:layout_height="37.5dp"
+                    android:id="@+id/textView3"
+                    android:layout_marginLeft="10.0dp"
+                    android:layout_marginTop="0.0dp"
+                    android:layout_marginBottom="0.0dp" />
+                <EditText
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:layout_width="253.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ubicacionGeoText"
+                    android:layout_marginRight="10.0dp"
+                    android:layout_marginTop="12.0dp"
+                    android:layout_marginBottom="5.0dp"
+                    android:layout_marginLeft="24.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="43.5dp"
+                android:id="@+id/linearLayout20"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Ubicación:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="71.5dp"
+                    android:layout_height="30.5dp"
+                    android:id="@+id/textView4"
+                    android:layout_marginLeft="10.0dp"
+                    android:layout_marginTop="2.5dp" />
+                <EditText
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:layout_width="253.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ubicacionText"
+                    android:layout_marginRight="10.0dp"
+                    android:layout_marginTop="5.0dp"
+                    android:layout_marginBottom="5.0dp"
+                    android:layout_marginLeft="24.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout2"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Tipo de extintor:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/Tipo"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="190.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tipoSpinner"
+                    android:layout_marginLeft="68.0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout5"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Agente extintor:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/AgenteText"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="192.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerAgente"
+                    android:layout_marginLeft="69.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout6"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Capacidad:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView17"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="192.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerCapacidad"
+                    android:layout_marginLeft="97.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout15"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Presión:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView16"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="192.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerPresion"
+                    android:layout_marginLeft="118.0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout7"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Última prueba hidrostática:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView15"
+                    android:layout_marginTop="8.5dp" />
+                <Date
+                    android:layout_width="178.0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:id="@+id/dateUltimaHidrostatica"
+                    android:layout_marginLeft="14.0dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout17"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Próxima prueba hidrostática:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView14"
+                    android:layout_marginTop="8.5dp" />
+                <DatePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:id="@+id/dateProximaHidrostatica"
+                    android:layout_marginLeft="3.5dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout18"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Próximo mantenimiento:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView13"
+                    android:layout_marginTop="8.5dp" />
+                <DatePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:background="#FFFFFF"
+                    android:id="@+id/dateProximoMantenimiento"
+                    android:layout_marginLeft="30.5dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout8"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Rotulación:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView12"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="190.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerRotulacion"
+                    android:layout_marginLeft="99.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout9"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Acceso a extintor:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView11"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="188.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerAcceso"
+                    android:layout_marginLeft="58.0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout10"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Condición de extintor:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView6"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="185.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerCondicion"
+                    android:layout_marginLeft="35.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout11"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Seguro y marchamo:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView7"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="184.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerSeguro"
+                    android:layout_marginLeft="36.5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout12"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Collarín:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView8"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="190.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerCollarin"
+                    android:layout_marginLeft="112.0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout13"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Condición de la manguera:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView9"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="187.0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerManguera"
+                    android:layout_marginLeft="0.0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="39.5dp"
+                android:id="@+id/linearLayout14"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="13.0dp"
+                android:layout_marginTop="5.5dp">
+                <TextView
+                    android:textColor="#FFFFFF"
+                    android:text="Condición de la boquilla:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView10"
+                    android:layout_marginTop="8.5dp" />
+                <Spinner
+                    android:layout_width="187.5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/spinnerBoquilla"
+                    android:layout_marginLeft="12.5dp" />
+            </LinearLayout>
+            <Button
+                android:textColor="#FFFFFF"
+                android:background="#000000"
+                android:text="Actualizar extintor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="19.0dp"
+                android:layout_marginLeft="19.0dp"
+                android:id="@+id/actualizarBtn"
+                android:layout_marginTop="10.0dp"
+                android:layout_marginBottom="29.0dp" />
+       
+
+        </LinearLayout>
+    </ScrollView>
+   
+    
+</LinearLayout>

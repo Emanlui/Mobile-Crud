@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\acercaDe.cs" />
+    <Compile Include="Activities\actualizarForm.cs" />
     <Compile Include="Activities\contacto.cs" />
     <Compile Include="Activities\correo.cs" />
     <Compile Include="Activities\galeria.cs" />
@@ -246,6 +247,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\loginForm.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\actualizarForm.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

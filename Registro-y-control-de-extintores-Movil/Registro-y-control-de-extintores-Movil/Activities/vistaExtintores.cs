@@ -67,7 +67,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
                     GridLayout ll = new GridLayout(this);
                     ll.ColumnCount = 1;
-                    ll.RowCount = 14;
+                    ll.RowCount = 17;
                     LinearLayout.LayoutParams layout_param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
                     layout_param.LeftMargin = 100;
                     layout_param.RightMargin = 100;
@@ -78,12 +78,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     int pWidth = ll.Width;
                     int pHeight = ll.Height;
 
-                    LinearLayout[] lista_de_layouts = new LinearLayout[16];
+                    LinearLayout[] lista_de_layouts = new LinearLayout[17];
 
-                    for (int pos = 0; pos < 16; pos++)
+                    for (int pos = 0; pos < 17; pos++)
                     {
                         LinearLayout.LayoutParams layout_grid = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
-
 
                         layout_grid.Gravity = GravityFlags.Center;
                         layout_grid.SetMargins(MARGIN, MARGIN, MARGIN, MARGIN);
@@ -446,17 +445,44 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     posicion++;
 
 
-                    for (int i = 0; i < 15; i++) ll.AddView(lista_de_layouts[i]);
+                    for (int i = 0; i < 14; i++) ll.AddView(lista_de_layouts[i]);
 
+
+                    
+
+                    LinearLayout.LayoutParams button_margin = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
+
+                    button_margin.Gravity = GravityFlags.Center;
+                    Button actualizarBtn = new Button(this);
+                    actualizarBtn.Click += (sender, EventArgs) => { botonActualizarSeleccionado(sender, EventArgs, extintor); };
+                    actualizarBtn.LayoutParameters = button_margin;
+                    actualizarBtn.Text = "Actualizar";
+                    actualizarBtn.SetTextColor(Android.Graphics.Color.White);
+                    actualizarBtn.SetBackgroundColor(Android.Graphics.Color.Black);
+                    lista_de_layouts[posicion].AddView(actualizarBtn);
+                    ll.AddView(lista_de_layouts[posicion]);
+ 
+                    posicion++;
 
                     ImageView linea = new ImageView(this);
                     linea.SetImageResource(Resource.Drawable.linea);
+                    System.Console.WriteLine(posicion);
                     lista_de_layouts[posicion].AddView(linea);
                     ll.AddView(lista_de_layouts[posicion]);
+                   
+
                     layout.AddView(ll);
                 }
             }
 
         }
+
+        private void botonActualizarSeleccionado(object sender, EventArgs eventArgs, Extintor extintor)
+        {
+            Intent intent = new Intent(base.BaseContext, typeof(Activities.actualizarForm));
+            intent.PutExtra("extintor", extintor.Id);
+
+            StartActivity(intent);
+    }
     }
 }

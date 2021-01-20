@@ -1,4 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="centroDeTrabajo">Centro de Trabajo</string>
+  <string-array name="TipoExtintor">
+    <item>ABC</item>
+    <item>AB</item>
+    <item>BC</item>
+    <item>C</item>
+  </string-array>
+  <string-array name="AgenteExtintor">
+    <item>Anhídrico Carbónico</item>
+    <item>Polvo químico seco</item>
+    <item>Agua</item>
+    <item>Agua desionizada</item>
+    <item>Espuma AFFF</item>
+    <item>Base de acetato de potasio</item>
+    <item>Especiales para metales</item>
+  </string-array>
+  <string-array name="CapacidadExtintor">
+    <item>5 Libras</item>
+    <item>10 Libras</item>
+    <item>20 Libras</item>
+  </string-array>
+  <string-array name="PresionExtintor">
+    <item>Correcta</item>
+    <item>Incorrecta</item>
+  </string-array>
+  <string-array name="RotulaciónExtintor">
+    <item>Correcta</item>
+    <item>Incorrecta</item>
+    <item>No cuenta</item>
+  </string-array>
+  <string-array name="AccesoExtintor">
+    <item>Si</item>
+    <item>No</item>
+  </string-array>
+  <string-array name="CondicionExtintor">
+    <item>Bueno</item>
+    <item>Malo</item>
+  </string-array>
+  <string-array name="SeguroExtintor">
+    <item>Bien</item>
+    <item>Mal</item>
+  </string-array>
+  <string-array name="CollarinExtintor">
+    <item>Si</item>
+    <item>No</item>
+  </string-array>
+  <string-array name="MangueraExtintor">
+    <item>Buena</item>
+    <item>Mala</item>
+  </string-array>
+  <string-array name="BoquillaExtintor">
+    <item>Buena</item>
+    <item>Mala</item>
+  </string-array>
 </resources>

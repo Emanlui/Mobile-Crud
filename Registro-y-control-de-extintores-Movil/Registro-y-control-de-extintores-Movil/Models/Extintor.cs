@@ -16,6 +16,8 @@ namespace Registro_y_control_de_extintores_Movil.Models
     {
         public int Id_centro { get; set; }
 
+        public int Id { get; set; }
+
         public string Activo { get; set; }
 
         public string Tipo { get; set; }
