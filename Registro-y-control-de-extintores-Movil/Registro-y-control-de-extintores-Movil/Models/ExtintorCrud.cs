@@ -67,10 +67,33 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Ubicacion_geografica = registros["ubicacion_geografica"].ToString();
                     e.Ubicacion = registros["ubicacion"].ToString();
                     e.Agente_extintor = registros["agente_extintor"].ToString();
-                    e.Capacidad = (int)registros["capacidad"];
-                    e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
-                    e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
-                    e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    e.Capacidad = (int)registros["capacidad"]; 
+                    
+                    try { 
+                        e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
+                    }catch(System.InvalidCastException exception)
+                    {
+                        e.Ultima_prueba_hidrostatica = "Sin fecha";
+                    }
+
+                    try
+                    {
+                        e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Proxima_prueba_hidrostatica = "Sin fecha";
+                    }
+
+                    try
+                    {
+                        e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Proximo_mantenimiento = "Sin fecha";
+                    }
+                    
                     e.Presion = (int)(ulong)registros["presion"];
                     e.Rotulacion = (int)registros["rotulacion"];
                     e.Acceso_a_extintor = (int)(ulong)registros["acceso_a_extintor"];
@@ -143,9 +166,32 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Ubicacion = registros["ubicacion"].ToString();
                     e.Agente_extintor = registros["agente_extintor"].ToString();
                     e.Capacidad = (int)registros["capacidad"];
-                    e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
-                    e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
-                    e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    try
+                    {
+                        e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Ultima_prueba_hidrostatica = "Sin fecha";
+                    }
+
+                    try
+                    {
+                        e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Proxima_prueba_hidrostatica = "Sin fecha";
+                    }
+
+                    try
+                    {
+                        e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Proximo_mantenimiento = "Sin fecha";
+                    }
                     e.Presion = (int)(ulong)registros["presion"];
                     e.Rotulacion = (int)registros["rotulacion"];
                     e.Acceso_a_extintor = (int)(ulong)registros["acceso_a_extintor"];
@@ -172,42 +218,54 @@ namespace Registro_y_control_de_extintores_Movil.Models
             return lista_de_extintores;
         }
 
-        internal void ActualizarExtintor(Extintor extintor)
+        internal Boolean ActualizarExtintor(Extintor extintor)
         {
             Conexion conexion = new Conexion();
-            conexion.con.Open();
+
+            try { 
+                conexion.con.Open();
 
 
-            using (MySqlCommand cmd = new MySqlCommand())
-            {
-                cmd.CommandText = "UPDATE extintor SET tipo=@tipo,ubicacion_geografica=@ubicacion_geografica," +
-                    "ubicacion=@ubicacion, agente_extintor=@agente_extintor, capacidad=@capacidad," +
-                    "ultima_prueba_hidrostatica=@ultima_prueba_hidrostatica, proxima_prueba_hidrostatica=@proxima_prueba_hidrostatica," +
-                    "proximo_mantenimiento=@proximo_mantenimiento, presion = @presion, rotulacion = @rotulacion," +
-                    "acceso_a_extintor=@acceso_a_extintor, condicion_extintor=@condicion_extintor, seguro_y_marchamo=@seguro_y_marchamo," +
-                    "collarin=@collarin, condicion_manguera=@condicion_manguera, condicion_boquilla=@condicion_boquilla WHERE id = @id;";
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = conexion.con;
-                cmd.Parameters.Add("@tipo", MySqlDbType.Text).Value = extintor.Tipo;
-                cmd.Parameters.Add("@ubicacion_geografica", MySqlDbType.Text).Value = extintor.Ubicacion_geografica;
-                cmd.Parameters.Add("@ubicacion", MySqlDbType.Text).Value = extintor.Ubicacion;
-                cmd.Parameters.Add("@agente_extintor", MySqlDbType.Text).Value = extintor.Agente_extintor;
-                cmd.Parameters.Add("@capacidad", MySqlDbType.Int32).Value = extintor.Capacidad;
-                cmd.Parameters.Add("@ultima_prueba_hidrostatica", MySqlDbType.Date).Value = extintor.Ultima_prueba_hidrostatica;
-                cmd.Parameters.Add("@proxima_prueba_hidrostatica", MySqlDbType.Date).Value = extintor.Proxima_prueba_hidrostatica;
-                cmd.Parameters.Add("@proximo_mantenimiento", MySqlDbType.Date).Value = extintor.Proximo_mantenimiento;
-                cmd.Parameters.Add("@presion", MySqlDbType.Int32).Value = extintor.Presion;
-                cmd.Parameters.Add("@rotulacion", MySqlDbType.Int32).Value = extintor.Rotulacion;
-                cmd.Parameters.Add("@acceso_a_extintor", MySqlDbType.Int32).Value = extintor.Acceso_a_extintor;
-                cmd.Parameters.Add("@condicion_extintor", MySqlDbType.Int32).Value = extintor.Condicion_extintor;
-                cmd.Parameters.Add("@seguro_y_marchamo", MySqlDbType.Int32).Value = extintor.Seguro_y_marchamo;
-                cmd.Parameters.Add("@collarin", MySqlDbType.Int32).Value = extintor.Collarin;
-                cmd.Parameters.Add("@condicion_manguera", MySqlDbType.Int32).Value = extintor.Condicion_manguera;
-                cmd.Parameters.Add("@condicion_boquilla", MySqlDbType.Int32).Value = extintor.Condicion_boquilla;
-                cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = extintor.Id;
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.CommandText = "UPDATE extintor SET tipo=@tipo,ubicacion_geografica=@ubicacion_geografica," +
+                        "ubicacion=@ubicacion, agente_extintor=@agente_extintor, capacidad=@capacidad," +
+                        "ultima_prueba_hidrostatica=@ultima_prueba_hidrostatica, proxima_prueba_hidrostatica=@proxima_prueba_hidrostatica," +
+                        "proximo_mantenimiento=@proximo_mantenimiento, presion = @presion, rotulacion = @rotulacion," +
+                        "acceso_a_extintor=@acceso_a_extintor, condicion_extintor=@condicion_extintor, seguro_y_marchamo=@seguro_y_marchamo," +
+                        "collarin=@collarin, condicion_manguera=@condicion_manguera, condicion_boquilla=@condicion_boquilla WHERE id = @id;";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conexion.con;
+                    cmd.Parameters.Add("@tipo", MySqlDbType.Text).Value = extintor.Tipo;
+                    cmd.Parameters.Add("@ubicacion_geografica", MySqlDbType.Text).Value = extintor.Ubicacion_geografica;
+                    cmd.Parameters.Add("@ubicacion", MySqlDbType.Text).Value = extintor.Ubicacion;
+                    cmd.Parameters.Add("@agente_extintor", MySqlDbType.Text).Value = extintor.Agente_extintor;
+                    cmd.Parameters.Add("@capacidad", MySqlDbType.Int32).Value = extintor.Capacidad;
+                    cmd.Parameters.Add("@ultima_prueba_hidrostatica", MySqlDbType.Date).Value = extintor.Ultima_prueba_hidrostatica;
+                    cmd.Parameters.Add("@proxima_prueba_hidrostatica", MySqlDbType.Date).Value = extintor.Proxima_prueba_hidrostatica;
+                    cmd.Parameters.Add("@proximo_mantenimiento", MySqlDbType.Date).Value = extintor.Proximo_mantenimiento;
+                    cmd.Parameters.Add("@presion", MySqlDbType.Int32).Value = extintor.Presion;
+                    cmd.Parameters.Add("@rotulacion", MySqlDbType.Int32).Value = extintor.Rotulacion;
+                    cmd.Parameters.Add("@acceso_a_extintor", MySqlDbType.Int32).Value = extintor.Acceso_a_extintor;
+                    cmd.Parameters.Add("@condicion_extintor", MySqlDbType.Int32).Value = extintor.Condicion_extintor;
+                    cmd.Parameters.Add("@seguro_y_marchamo", MySqlDbType.Int32).Value = extintor.Seguro_y_marchamo;
+                    cmd.Parameters.Add("@collarin", MySqlDbType.Int32).Value = extintor.Collarin;
+                    cmd.Parameters.Add("@condicion_manguera", MySqlDbType.Int32).Value = extintor.Condicion_manguera;
+                    cmd.Parameters.Add("@condicion_boquilla", MySqlDbType.Int32).Value = extintor.Condicion_boquilla;
+                    cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = extintor.Id;
+
+                    System.Console.WriteLine(extintor.Proxima_prueba_hidrostatica);
+                    System.Console.WriteLine(extintor.Ultima_prueba_hidrostatica);
+                    System.Console.WriteLine(extintor.Proximo_mantenimiento);
+                    
 
                 cmd.ExecuteNonQuery();
-                conexion.con.Close();
+                    conexion.con.Close();
+                }
+                return true;
+            }catch(Exception exception)
+            {
+                return false;
             }
         }
 
@@ -238,9 +296,32 @@ namespace Registro_y_control_de_extintores_Movil.Models
                     e.Ubicacion = registros["ubicacion"].ToString();
                     e.Agente_extintor = registros["agente_extintor"].ToString();
                     e.Capacidad = (int)registros["capacidad"];
-                    e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
-                    e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
-                    e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    try
+                    {
+                        e.Ultima_prueba_hidrostatica = registros["ultima_prueba_hidrostatica"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Ultima_prueba_hidrostatica = "Sin fecha";
+                    }
+
+                    try
+                    {
+                        e.Proxima_prueba_hidrostatica = registros["proxima_prueba_hidrostatica"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Proxima_prueba_hidrostatica = "Sin fecha";
+                    }
+
+                    try
+                    {
+                        e.Proximo_mantenimiento = registros["proximo_mantenimiento"].ToString();
+                    }
+                    catch (System.InvalidCastException exception)
+                    {
+                        e.Proximo_mantenimiento = "Sin fecha";
+                    }
                     e.Presion = (int)(ulong)registros["presion"];
                     e.Rotulacion = (int)registros["rotulacion"];
                     e.Acceso_a_extintor = (int)(ulong)registros["acceso_a_extintor"];

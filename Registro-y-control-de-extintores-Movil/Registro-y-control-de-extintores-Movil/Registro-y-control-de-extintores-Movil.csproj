@@ -71,6 +71,7 @@
     <Compile Include="Activities\actualizarForm.cs" />
     <Compile Include="Activities\contacto.cs" />
     <Compile Include="Activities\correo.cs" />
+    <Compile Include="Activities\DatePickerFragment.cs" />
     <Compile Include="Activities\galeria.cs" />
     <Compile Include="Activities\informacionEnviada.cs" />
     <Compile Include="Activities\login.cs" />
@@ -133,7 +134,7 @@
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.1874</Version>
+      <Version>5.0.0.1905</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

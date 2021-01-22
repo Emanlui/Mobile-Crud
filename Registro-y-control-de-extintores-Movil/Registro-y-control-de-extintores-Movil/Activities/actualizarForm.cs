@@ -17,13 +17,17 @@ namespace Registro_y_control_de_extintores_Movil.Activities
     {
         int extintor_id;
         Extintor extintor = new Extintor();
+        Button dateProximaHidrostatica;
+        Button dateUltimaHidrostatica;
+        Button dateProximoMantenimiento;
+        ExtintorCrud ec = new ExtintorCrud();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.actualizarForm);
             extintor_id = base.Intent.GetIntExtra("extintor",0);
-            System.Console.WriteLine(extintor_id);
-            ExtintorCrud ec = new ExtintorCrud();
+            
+            
             extintor = ec.ObtenerRegistroPorID(extintor_id.ToString());
             llenarFormulario();
             
@@ -38,11 +42,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             Spinner tipoSpinner = FindViewById<Spinner>(Resource.Id.tipoSpinner);
             this.extintor.Tipo = tipoSpinner.SelectedItem.ToString();
 
-            EditText ubicacionText = FindViewById<EditText>(Resource.Id.ubicacionText);
-            this.extintor.Ubicacion_geografica = ubicacionText.Text;
-
             EditText ubicacionGeoText = FindViewById<EditText>(Resource.Id.ubicacionGeoText);
-            this.extintor.Ubicacion = ubicacionGeoText.Text;
+            this.extintor.Ubicacion_geografica = ubicacionGeoText.Text;
+
+            EditText ubicacionText = FindViewById<EditText>(Resource.Id.ubicacionText);
+            this.extintor.Ubicacion = ubicacionText.Text;
 
             Spinner agenteSpinner = FindViewById<Spinner>(Resource.Id.spinnerAgente);
             this.extintor.Agente_extintor = agenteSpinner.SelectedItem.ToString();
@@ -59,15 +63,6 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             {
                 this.extintor.Capacidad = 20;
             }
-
-            DatePicker dateUltimaPruebaHidro = FindViewById<DatePicker>(Resource.Id.dateUltimaHidrostatica);
-            this.extintor.Ultima_prueba_hidrostatica = dateUltimaPruebaHidro.DateTime.ToString();
-
-            DatePicker dateProximaPruebaHidro = FindViewById<DatePicker>(Resource.Id.dateProximaHidrostatica);
-            this.extintor.Proxima_prueba_hidrostatica = dateProximaPruebaHidro.DateTime.ToString();
-
-            DatePicker dateProximoMantenimiento = FindViewById<DatePicker>(Resource.Id.dateProximoMantenimiento);
-            this.extintor.Proximo_mantenimiento = dateProximoMantenimiento.DateTime.ToString();
 
             Spinner spinnerPresion = FindViewById<Spinner>(Resource.Id.spinnerPresion);
             if (spinnerPresion.SelectedItem.ToString() == "Correcta")
@@ -151,6 +146,17 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             {
                 this.extintor.Condicion_boquilla = 0;
             }
+            
+            Boolean verificadorDeActualizar = ec.ActualizarExtintor(this.extintor);
+            if (verificadorDeActualizar)
+            {
+                StartActivity(typeof(menuPrincipal));
+            }
+            else
+            {
+                Toast.MakeText(this, "Error a la hora de actualizar el extintor", ToastLength.Short).Show();
+                StartActivity(typeof(menuPrincipal));
+            }
 
     }
 
@@ -164,18 +170,65 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
         private void poblarDate()
         {
-            DatePicker datePicker1 = (DatePicker)FindViewById<DatePicker>(Resource.Id.dateProximaHidrostatica);
-            datePicker1.UpdateDate(2016, 5, 22);
-            DatePicker datePicker2 = (DatePicker)FindViewById<DatePicker>(Resource.Id.dateUltimaHidrostatica);
-            datePicker2.UpdateDate(2016, 5, 22);
-            DatePicker datePicker3 = (DatePicker)FindViewById<DatePicker>(Resource.Id.dateProximoMantenimiento);
-            datePicker3.UpdateDate(2016, 5, 22);
+            dateProximaHidrostatica = (Button)FindViewById<Button>(Resource.Id.dateProximaHidrostatica);
+            dateProximaHidrostatica.Click += delegate {
+                OnClickProximoHidro();
+             };
+            dateUltimaHidrostatica = (Button)FindViewById<Button>(Resource.Id.dateUltimaHidrostatica);
+            dateUltimaHidrostatica.Click += delegate {
+                OnClickUltimaHidro();
+            };
+            dateProximoMantenimiento = (Button)FindViewById<Button>(Resource.Id.dateProximoMantenimiento);
+            dateProximoMantenimiento.Click += delegate {
+                OnClickProximoMantenimiento();
+            };
+
         }
+
+        private void OnClickProximoHidro()
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+
+                String fecha = formatearFecha(time);
+                this.extintor.Proxima_prueba_hidrostatica = fecha;
+                dateProximaHidrostatica.Text = fecha;
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+
+        private void OnClickUltimaHidro()
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+                String fecha = formatearFecha(time);
+                this.extintor.Ultima_prueba_hidrostatica = fecha;
+                dateUltimaHidrostatica.Text = fecha;
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+
+        private void OnClickProximoMantenimiento()
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+                String fecha = formatearFecha(time);
+                this.extintor.Proximo_mantenimiento = fecha;
+                dateProximoMantenimiento.Text = fecha;
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+
 
         public void poblarSpinners()
         {
             System.Console.WriteLine(extintor.Ubicacion);
             System.Console.WriteLine(extintor.Ubicacion_geografica);
+
+            dateProximaHidrostatica.Text = extintor.Proxima_prueba_hidrostatica;
+            dateUltimaHidrostatica.Text = extintor.Ultima_prueba_hidrostatica;
+            dateProximoMantenimiento.Text = extintor.Proximo_mantenimiento;
+
             EditText ubicacionText = FindViewById<EditText>(Resource.Id.ubicacionText);
             ubicacionText.SetText(extintor.Ubicacion.ToCharArray(), 0, extintor.Ubicacion.Length);
 
@@ -249,5 +302,14 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             boquillaSpinner.Adapter = adapter;
         }
+
+        public String formatearFecha(DateTime time)
+        {
+            string[] fecha = time.ToString().Split(" ");
+            string[] modificar_formato = fecha[0].Split("/");
+            string fecha_modificada = modificar_formato[2] + "-" + modificar_formato[0] + "-" + modificar_formato[1];
+            return fecha_modificada;
+        }
+
     }
 }
