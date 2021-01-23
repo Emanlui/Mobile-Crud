@@ -20,6 +20,10 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         Button dateProximaHidrostatica;
         Button dateUltimaHidrostatica;
         Button dateProximoMantenimiento;
+        Boolean proximoManteClick = false;
+        Boolean proximaHidroClick = false;
+        Boolean ultimoHidroClick = false;
+
         ExtintorCrud ec = new ExtintorCrud();
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,9 +45,6 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
             Spinner tipoSpinner = FindViewById<Spinner>(Resource.Id.tipoSpinner);
             this.extintor.Tipo = tipoSpinner.SelectedItem.ToString();
-
-            EditText ubicacionGeoText = FindViewById<EditText>(Resource.Id.ubicacionGeoText);
-            this.extintor.Ubicacion_geografica = ubicacionGeoText.Text;
 
             EditText ubicacionText = FindViewById<EditText>(Resource.Id.ubicacionText);
             this.extintor.Ubicacion = ubicacionText.Text;
@@ -146,7 +147,50 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             {
                 this.extintor.Condicion_boquilla = 0;
             }
-            
+
+            System.Console.WriteLine(this.extintor.Proxima_prueba_hidrostatica);
+            System.Console.WriteLine(this.extintor.Proximo_mantenimiento);
+            System.Console.WriteLine(this.extintor.Ultima_prueba_hidrostatica);
+            if (!proximaHidroClick)
+            {
+                try
+                {
+                    this.extintor.Proxima_prueba_hidrostatica = formatearFecha(this.extintor.Proxima_prueba_hidrostatica);
+                }catch(Exception exception)
+                {
+                    this.extintor.Proxima_prueba_hidrostatica = formatearFecha(DateTime.Now);
+                }
+            }
+
+            if (!proximoManteClick)
+            {
+                try
+                {
+                    this.extintor.Proximo_mantenimiento = formatearFecha(this.extintor.Proximo_mantenimiento);
+                }
+                catch (Exception exception)
+                {
+                    this.extintor.Proximo_mantenimiento = formatearFecha(DateTime.Now);
+                }
+            }
+
+            if (!ultimoHidroClick)
+            {
+                try
+                {
+                    this.extintor.Ultima_prueba_hidrostatica = formatearFecha(this.extintor.Ultima_prueba_hidrostatica);
+                }
+                catch (Exception exception)
+                {
+                    this.extintor.Ultima_prueba_hidrostatica = formatearFecha(DateTime.Now);
+                }
+            }
+
+            System.Console.WriteLine(this.extintor.Proxima_prueba_hidrostatica);
+            System.Console.WriteLine(this.extintor.Proximo_mantenimiento);
+            System.Console.WriteLine(this.extintor.Ultima_prueba_hidrostatica);
+
+
             Boolean verificadorDeActualizar = ec.ActualizarExtintor(this.extintor);
             if (verificadorDeActualizar)
             {
@@ -189,11 +233,12 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         {
             DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
             {
-
                 String fecha = formatearFecha(time);
                 this.extintor.Proxima_prueba_hidrostatica = fecha;
                 dateProximaHidrostatica.Text = fecha;
+                System.Console.WriteLine(this.extintor.Proxima_prueba_hidrostatica);
             });
+            this.proximaHidroClick = true;
             frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
@@ -204,8 +249,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                 String fecha = formatearFecha(time);
                 this.extintor.Ultima_prueba_hidrostatica = fecha;
                 dateUltimaHidrostatica.Text = fecha;
+                System.Console.WriteLine(this.extintor.Ultima_prueba_hidrostatica);
             });
+            this.ultimoHidroClick = true;
             frag.Show(FragmentManager, DatePickerFragment.TAG);
+            
         }
 
         private void OnClickProximoMantenimiento()
@@ -215,25 +263,24 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                 String fecha = formatearFecha(time);
                 this.extintor.Proximo_mantenimiento = fecha;
                 dateProximoMantenimiento.Text = fecha;
+                System.Console.WriteLine(this.extintor.Proximo_mantenimiento);
             });
+            this.proximoManteClick = true;
             frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
-
         public void poblarSpinners()
         {
-            System.Console.WriteLine(extintor.Ubicacion);
-            System.Console.WriteLine(extintor.Ubicacion_geografica);
+          
+            TextView activo = FindViewById<TextView>(Resource.Id.activoText);
+            activo.Text = "Activo: " + extintor.Id;
 
-            dateProximaHidrostatica.Text = extintor.Proxima_prueba_hidrostatica;
-            dateUltimaHidrostatica.Text = extintor.Ultima_prueba_hidrostatica;
-            dateProximoMantenimiento.Text = extintor.Proximo_mantenimiento;
+            dateProximaHidrostatica.Text = formatearFecha(extintor.Proxima_prueba_hidrostatica);
+            dateUltimaHidrostatica.Text = formatearFecha(extintor.Ultima_prueba_hidrostatica);
+            dateProximoMantenimiento.Text = formatearFecha(extintor.Proximo_mantenimiento);
 
             EditText ubicacionText = FindViewById<EditText>(Resource.Id.ubicacionText);
             ubicacionText.SetText(extintor.Ubicacion.ToCharArray(), 0, extintor.Ubicacion.Length);
-
-            EditText ubicacionGeoText = FindViewById<EditText>(Resource.Id.ubicacionGeoText);
-            ubicacionGeoText.SetText(extintor.Ubicacion_geografica.ToCharArray(),0, extintor.Ubicacion_geografica.Length);
 
             Spinner tipoSpinner = FindViewById<Spinner>(Resource.Id.tipoSpinner);
             Spinner agenteSpinner = FindViewById<Spinner>(Resource.Id.spinnerAgente);
@@ -303,11 +350,19 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             boquillaSpinner.Adapter = adapter;
         }
 
-        public String formatearFecha(DateTime time)
+        public String formatearFecha(Object time)
         {
-            string[] fecha = time.ToString().Split(" ");
-            string[] modificar_formato = fecha[0].Split("/");
-            string fecha_modificada = modificar_formato[2] + "-" + modificar_formato[0] + "-" + modificar_formato[1];
+            string fecha_modificada = "";
+            try
+            {
+                string[] fecha = time.ToString().Split(" ");
+                string[] modificar_formato = fecha[0].Split("/");
+                fecha_modificada = modificar_formato[2] + "-" + modificar_formato[0] + "-" + modificar_formato[1];
+            }catch(Exception exception)
+            {
+                fecha_modificada = "Sin fecha";
+            }
+            
             return fecha_modificada;
         }
 

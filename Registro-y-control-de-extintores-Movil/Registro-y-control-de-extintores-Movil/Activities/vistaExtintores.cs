@@ -230,22 +230,45 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     //-----------------------------------------------------------------
 
                     TextView ultima_pruebaText = new TextView(this);
-                    string ultima_prueba = " Última prueba hidrostatica: " + formatearFecha(extintor.Ultima_prueba_hidrostatica);
-                    ultima_pruebaText.SetText(ultima_prueba.ToCharArray(), 1, ultima_prueba.Length - 1);
+                    string ultima_prueba = "";
+                    try
+                    {
+                        ultima_prueba = "Última prueba hidrostatica: " + formatearFecha(extintor.Ultima_prueba_hidrostatica);
+                    }catch(Exception exception)
+                    {
+                        ultima_prueba = "Última prueba hidrostatica: Sin fecha";
+                    }
+                    ultima_pruebaText.SetText(ultima_prueba.ToCharArray(), 0, ultima_prueba.Length);
                     ultima_pruebaText.SetTextColor(Android.Graphics.Color.White);
                     lista_de_layouts[posicion].AddView(ultima_pruebaText);
                     posicion++;
 
                     TextView proximaHidroText = new TextView(this);
-                    string proxima_prueba = " Próxima prueba hidrostatica: " + formatearFecha(extintor.Proxima_prueba_hidrostatica);
-                    proximaHidroText.SetText(proxima_prueba.ToCharArray(), 1, proxima_prueba.Length - 1);
+                    string proxima_prueba = "";
+                    try
+                    {
+                        proxima_prueba = "Próxima prueba hidrostatica: " + formatearFecha(extintor.Proxima_prueba_hidrostatica);
+                    }catch(Exception e)
+                    {
+                        proxima_prueba = "Próxima prueba hidrostatica: Sin fecha";
+                    }
+                    
+                    proximaHidroText.SetText(proxima_prueba.ToCharArray(), 0, proxima_prueba.Length);
                     proximaHidroText.SetTextColor(Android.Graphics.Color.White);
                     lista_de_layouts[posicion].AddView(proximaHidroText);
                     posicion++;
 
                     TextView proximo_mantenimientoText = new TextView(this);
-                    string proximo_mantenimiento = " Próximo mantenimiento: " + formatearFecha(extintor.Proximo_mantenimiento);
-                    proximo_mantenimientoText.SetText(proximo_mantenimiento.ToCharArray(), 1, proximo_mantenimiento.Length - 1);
+                    string proximo_mantenimiento = "";
+                    try
+                    {
+                        proximo_mantenimiento = "Próximo mantenimiento: " + formatearFecha(extintor.Proximo_mantenimiento);
+                    }
+                    catch (Exception e)
+                    {
+                        proximo_mantenimiento = "Próximo mantenimiento: Sin fecha";
+                    }
+                    proximo_mantenimientoText.SetText(proximo_mantenimiento.ToCharArray(), 0, proximo_mantenimiento.Length);
                     proximo_mantenimientoText.SetTextColor(Android.Graphics.Color.White);
                     lista_de_layouts[posicion].AddView(proximo_mantenimientoText);
                     posicion++;

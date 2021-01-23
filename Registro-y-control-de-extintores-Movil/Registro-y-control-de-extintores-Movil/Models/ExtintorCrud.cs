@@ -20,6 +20,8 @@ namespace Registro_y_control_de_extintores_Movil.Models
     {
         public Extintor extintor { set; get; }
 
+        UsuarioCrud uc = new UsuarioCrud();
+
         public byte[] obtenerByteArray(Bitmap bm)
         {
             System.IO.MemoryStream bs = new System.IO.MemoryStream();
@@ -45,6 +47,7 @@ namespace Registro_y_control_de_extintores_Movil.Models
 
         internal List<Extintor> ObtenerRegistros()
         {
+
             List<Extintor> lista_de_extintores = new List<Extintor>();
             Conexion conexion = new Conexion();
             conexion.con.Open();
@@ -53,7 +56,17 @@ namespace Registro_y_control_de_extintores_Movil.Models
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences(mContext);
 
-                cmd.CommandText = "Select * from extintor,usuario,centro_de_trabajo WHERE usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo;";
+
+                if (uc.verificacionAdmin(ap.getCorreoKey()))
+                {
+                    cmd.CommandText = "Select * from extintor";
+                }
+                else
+                {
+                    cmd.CommandText = "Select * from extintor,usuario,centro_de_trabajo WHERE usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo;";
+                }
+
+                
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
                 cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = ap.getCorreoKey();
@@ -279,11 +292,10 @@ namespace Registro_y_control_de_extintores_Movil.Models
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences(mContext);
 
-                cmd.CommandText = "SELECT * FROM extintor,usuario,centro_de_trabajo WHERE extintor.id = @id and usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo;";
+                cmd.CommandText = "SELECT * FROM extintor WHERE extintor.id = @id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
                 cmd.Parameters.Add("@id", MySqlDbType.Text).Value = id;
-                cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = ap.getCorreoKey();
                 MySqlDataReader registros = cmd.ExecuteReader();
                 
                 if (registros.Read())

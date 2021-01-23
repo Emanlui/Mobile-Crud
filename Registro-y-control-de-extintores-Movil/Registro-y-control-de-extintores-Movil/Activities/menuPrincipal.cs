@@ -27,8 +27,18 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
             UsuarioCrud uc = new UsuarioCrud();
 
+            string mensaje;
+            if (uc.verificacionAdmin(ap.getCorreoKey()))
+            {
+                mensaje = "Ventana Administrador";
+            }
+            else
+            {
+                mensaje = "Centro de Trabajo: " + uc.getCentroDeTrabajo(ap.getCorreoKey());
+            }
+
             TextView tv = FindViewById<TextView>(Resource.Id.centroText);
-            string mensaje = "Centro de Trabajo: " + uc.getCentroDeTrabajo(ap.getCorreoKey());
+            
             tv.Text = mensaje;
 
             ImageView salir = FindViewById<ImageView>(Resource.Id.salirImage);

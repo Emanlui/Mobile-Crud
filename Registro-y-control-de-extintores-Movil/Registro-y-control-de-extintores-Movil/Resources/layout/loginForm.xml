@@ -49,6 +49,7 @@
             android:layout_marginTop="35.5dp"
             android:layout_marginLeft="16.5dp" />
         <EditText
+            android:inputType="textPassword"
             android:textColor="#000000"
             android:background="#FFFFFF"
             android:layout_width="match_parent"

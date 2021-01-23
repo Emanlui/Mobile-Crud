@@ -47,19 +47,37 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                 UsuarioCrud uc = new UsuarioCrud();
                 uc.cambiarContraseña(builder.ToString(),dato_del_usuario.Text);
 
-                if (uc.verificacionDeUsuario(dato_del_usuario.Text)) enviarCorreoDeRestablecimiento(dato_del_usuario.Text,builder.ToString());
+                Boolean verificarEnvioDeCorreo = false;
 
-                StartActivity(typeof(MensajeRestablecer));
+                if (uc.verificacionDeUsuario(dato_del_usuario.Text))
+                {
+                    verificarEnvioDeCorreo = enviarCorreoDeRestablecimiento(dato_del_usuario.Text, builder.ToString());
+
+                    if (verificarEnvioDeCorreo) StartActivity(typeof(MensajeRestablecer));
+                    StartActivity(typeof(login));
+                }
+                
+                 StartActivity(typeof(MensajeRestablecer));
+                
             }
         }
 
-        private void enviarCorreoDeRestablecimiento(string correo, string v)
+        private Boolean enviarCorreoDeRestablecimiento(string correo, string v)
         {
             // Parámetros
             MailMessage mail = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("emanuellejs1999@gmail.com");
-            mail.To.Add(correo);
+            try
+            {
+                mail.To.Add(correo);
+            }
+            catch(System.FormatException exception)
+            {
+                Toast.MakeText(this, "Error en el formato del correo", ToastLength.Short).Show();
+                return false;
+            }
+            
             mail.Subject = "Restablecimiento de la contraseña";
             mail.Body = "Se otorgará una contraseña temporal para poder acceder a la plataforma de extintores. \n " +
                 "Contraseña: " + v;
@@ -81,15 +99,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                 SmtpServer.Send(mail);
             }
             catch (Exception exception)
-            {
-                Dialog popupDialog = new Dialog(this);
-                popupDialog.SetContentView(Resource.Layout.MensajeDeError);
-                popupDialog.Window.SetSoftInputMode(SoftInput.AdjustResize);
-                popupDialog.Window.SetTitle("Error a la hora de enviar un correo");
-                popupDialog.Show();
-                popupDialog.Window.SetLayout(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
-                popupDialog.Window.SetBackgroundDrawableResource(Android.Resource.Color.Transparent);
+            { 
+                Toast.MakeText(this, "Error a la hora de enviar un correo", ToastLength.Short).Show();
+                return false;
             }
+            return true;
         }
     }
 }

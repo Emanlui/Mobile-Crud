@@ -58,6 +58,31 @@ namespace Registro_y_control_de_extintores_Movil.Models
             }
         }
 
+        public Boolean verificacionAdmin(string correo)
+        {
+            Conexion conexion = new Conexion();
+            conexion.con.Open();
+            Boolean verificar = false;
+            int admin = 0;
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+
+                cmd.CommandText = "SELECT * FROM usuario WHERE correo = @correo";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conexion.con;
+                cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = correo;
+                MySqlDataReader registros = cmd.ExecuteReader();
+                
+                while (registros.Read())
+                {
+                    admin = (int)registros["administrador"];
+                }
+                conexion.con.Close();
+                if (admin == 1) return true;
+                return false;
+            }
+        }
+
         internal string getCentroDeTrabajo(string correo)
         {
             Conexion conexion = new Conexion();

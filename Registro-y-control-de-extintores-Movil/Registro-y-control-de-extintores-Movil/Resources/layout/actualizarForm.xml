@@ -48,35 +48,17 @@
                     android:id="@+id/activoText"
                     android:layout_marginLeft="10.0dp" />
             </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="match_parent"
-                android:layout_height="56.0dp"
-                android:id="@+id/linearLayout4"
-                android:layout_marginTop="5.5dp">
-                <TextView
-                    android:textColor="#FFFFFF"
-                    android:text="Ubicación Geográfica:"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:layout_width="71.5dp"
-                    android:layout_height="37.5dp"
-                    android:id="@+id/textView3"
-                    android:layout_marginLeft="10.0dp"
-                    android:layout_marginTop="0.0dp"
-                    android:layout_marginBottom="0.0dp" />
-                <EditText
-                    android:textColor="#000000"
-                    android:background="#FFFFFF"
-                    android:layout_width="253.0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/ubicacionGeoText"
-                    android:layout_marginRight="10.0dp"
-                    android:layout_marginTop="12.0dp"
-                    android:layout_marginBottom="5.0dp"
-                    android:layout_marginLeft="24.5dp" />
-            </LinearLayout>
+            <ImageView
+            android:src="@android:drawable/divider_horizontal_dark"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom=".1dp"
+            android:paddingTop=".2dp"
+            android:background="#FFFFFF" />
+           
             <LinearLayout
                 android:orientation="horizontal"
                 android:minWidth="25px"
@@ -97,7 +79,7 @@
                 <EditText
                     android:textColor="#000000"
                     android:background="#FFFFFF"
-                    android:layout_width="253.0dp"
+                    android:layout_width="261.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/ubicacionText"
                     android:layout_marginRight="10.0dp"
@@ -124,11 +106,12 @@
                     android:id="@+id/Tipo"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="190.5dp"
+                    android:layout_width="188.5dp"
                     android:layout_height="match_parent"
                     android:id="@+id/tipoSpinner"
-                    android:layout_marginLeft="68.0dp" />
+                    android:layout_marginLeft="67.0dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -149,8 +132,9 @@
                     android:id="@+id/AgenteText"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="192.0dp"
+                    android:layout_width="188.5dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerAgente"
                     android:layout_marginLeft="69.5dp" />
@@ -174,11 +158,12 @@
                     android:id="@+id/textView17"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="192.0dp"
+                    android:layout_width="189.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerCapacidad"
-                    android:layout_marginLeft="97.5dp" />
+                    android:layout_marginLeft="98.5dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -199,8 +184,9 @@
                     android:id="@+id/textView16"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="192.0dp"
+                    android:layout_width="189.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerPresion"
                     android:layout_marginLeft="118.0dp" />
@@ -227,7 +213,7 @@
                     android:text=""
                     android:textColor="#FFFFFF"
                     android:background="#000000"
-                    android:layout_width="164.0dp"
+                    android:layout_width="163.5dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="25.0dp"
                     android:id="@+id/dateUltimaHidrostatica"/>
@@ -255,9 +241,9 @@
                     android:text=""
                     android:textColor="#FFFFFF"
                     android:background="#000000"
-                    android:layout_width="164.0dp"
+                    android:layout_width="163.5dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="14.0dp" 
+                    android:layout_marginLeft="14.0dp"
                     android:id="@+id/dateProximaHidrostatica"/>
                 
 
@@ -284,7 +270,7 @@
                     android:text=""
                     android:textColor="#FFFFFF"
                     android:background="#000000"
-                    android:layout_width="164.5dp"
+                    android:layout_width="163.5dp"
                     android:layout_height="match_parent"
                     android:id="@+id/dateProximoMantenimiento"
                     android:layout_marginLeft="41.5dp" />
@@ -309,8 +295,9 @@
                     android:id="@+id/textView12"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="190.0dp"
+                    android:layout_width="188.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerRotulacion"
                     android:layout_marginLeft="99.5dp" />
@@ -334,11 +321,12 @@
                     android:id="@+id/textView11"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
                     android:layout_width="188.5dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerAcceso"
-                    android:layout_marginLeft="58.0dp" />
+                    android:layout_marginLeft="56.0dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -359,11 +347,12 @@
                     android:id="@+id/textView6"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="185.5dp"
+                    android:layout_width="188.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerCondicion"
-                    android:layout_marginLeft="35.5dp" />
+                    android:layout_marginLeft="33.5dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -384,11 +373,12 @@
                     android:id="@+id/textView7"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="184.5dp"
+                    android:layout_width="188.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerSeguro"
-                    android:layout_marginLeft="36.5dp" />
+                    android:layout_marginLeft="41.0dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -409,11 +399,12 @@
                     android:id="@+id/textView8"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="190.5dp"
+                    android:layout_width="188.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerCollarin"
-                    android:layout_marginLeft="112.0dp" />
+                    android:layout_marginLeft="118.0dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -434,11 +425,12 @@
                     android:id="@+id/textView9"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="187.0dp"
+                    android:layout_width="189.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerManguera"
-                    android:layout_marginLeft="0.0dp" />
+                    android:layout_marginLeft="4.0dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -459,11 +451,12 @@
                     android:id="@+id/textView10"
                     android:layout_marginTop="8.5dp" />
                 <Spinner
+                    android:background="#FFFFFF"
                     android:textColor="#FFFFFF"
-                    android:layout_width="187.5dp"
+                    android:layout_width="188.0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/spinnerBoquilla"
-                    android:layout_marginLeft="12.5dp" />
+                    android:layout_marginLeft="18.0dp" />
             </LinearLayout>
             <Button
                 android:textColor="#FFFFFF"
