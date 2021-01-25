@@ -1,10 +1,12 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
-using Android.Widget; 
+using Android.Widget;
+using Registro_y_control_de_extintores_Movil.Models;
 
 namespace Registro_y_control_de_extintores_Movil.Activities
 {
@@ -24,6 +26,16 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
             TextView text = FindViewById<TextView>(Resource.Id.olvidarButton);
             text.Click += delegate { StartActivity(typeof(recuperarContrasena)); };
+
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+
+            if (ap.getLogin())
+            {
+                StartActivity(typeof(menuPrincipal));
+                Finish();
+                return;
+            }
 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

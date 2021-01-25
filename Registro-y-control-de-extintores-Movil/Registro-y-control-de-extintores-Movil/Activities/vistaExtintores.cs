@@ -67,7 +67,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
                     GridLayout ll = new GridLayout(this);
                     ll.ColumnCount = 1;
-                    ll.RowCount = 14;
+                    ll.RowCount = 18;
                     LinearLayout.LayoutParams layout_param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
                     layout_param.LeftMargin = 100;
                     layout_param.RightMargin = 100;
@@ -78,12 +78,11 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     int pWidth = ll.Width;
                     int pHeight = ll.Height;
 
-                    LinearLayout[] lista_de_layouts = new LinearLayout[16];
+                    LinearLayout[] lista_de_layouts = new LinearLayout[18];
 
-                    for (int pos = 0; pos < 16; pos++)
+                    for (int pos = 0; pos < 18; pos++)
                     {
                         LinearLayout.LayoutParams layout_grid = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
-
 
                         layout_grid.Gravity = GravityFlags.Center;
                         layout_grid.SetMargins(MARGIN, MARGIN, MARGIN, MARGIN);
@@ -230,11 +229,48 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
                     //-----------------------------------------------------------------
 
-                    TextView tv7 = new TextView(this);
-                    string ultima_prueba = " Última prueba hidrostatica: " + extintor.Ultima_prueba_hidrostatica;
-                    tv7.SetText(ultima_prueba.ToCharArray(), 1, ultima_prueba.Length - 1);
-                    tv7.SetTextColor(Android.Graphics.Color.White);
-                    lista_de_layouts[posicion].AddView(tv7);
+                    TextView ultima_pruebaText = new TextView(this);
+                    string ultima_prueba = "";
+                    try
+                    {
+                        ultima_prueba = "Última prueba hidrostatica: " + formatearFecha(extintor.Ultima_prueba_hidrostatica);
+                    }catch(Exception exception)
+                    {
+                        ultima_prueba = "Última prueba hidrostatica: Sin fecha";
+                    }
+                    ultima_pruebaText.SetText(ultima_prueba.ToCharArray(), 0, ultima_prueba.Length);
+                    ultima_pruebaText.SetTextColor(Android.Graphics.Color.White);
+                    lista_de_layouts[posicion].AddView(ultima_pruebaText);
+                    posicion++;
+
+                    TextView proximaHidroText = new TextView(this);
+                    string proxima_prueba = "";
+                    try
+                    {
+                        proxima_prueba = "Próxima prueba hidrostatica: " + formatearFecha(extintor.Proxima_prueba_hidrostatica);
+                    }catch(Exception e)
+                    {
+                        proxima_prueba = "Próxima prueba hidrostatica: Sin fecha";
+                    }
+                    
+                    proximaHidroText.SetText(proxima_prueba.ToCharArray(), 0, proxima_prueba.Length);
+                    proximaHidroText.SetTextColor(Android.Graphics.Color.White);
+                    lista_de_layouts[posicion].AddView(proximaHidroText);
+                    posicion++;
+
+                    TextView proximo_mantenimientoText = new TextView(this);
+                    string proximo_mantenimiento = "";
+                    try
+                    {
+                        proximo_mantenimiento = "Próximo mantenimiento: " + formatearFecha(extintor.Proximo_mantenimiento);
+                    }
+                    catch (Exception e)
+                    {
+                        proximo_mantenimiento = "Próximo mantenimiento: Sin fecha";
+                    }
+                    proximo_mantenimientoText.SetText(proximo_mantenimiento.ToCharArray(), 0, proximo_mantenimiento.Length);
+                    proximo_mantenimientoText.SetTextColor(Android.Graphics.Color.White);
+                    lista_de_layouts[posicion].AddView(proximo_mantenimientoText);
                     posicion++;
 
                     TextView tv8 = new TextView(this);
@@ -436,27 +472,48 @@ namespace Registro_y_control_de_extintores_Movil.Activities
 
                     //-----------------------------------------------------------------
 
-                    TextView tv14 = new TextView(this);
-                    string proximo_mantenimiento = " Próximo mantenimiento: " + extintor.Proximo_mantenimiento;
-                    tv14.SetText(proximo_mantenimiento.ToCharArray(), 1, proximo_mantenimiento.Length - 1);
-                    tv14.SetTextColor(Android.Graphics.Color.White);
-
-                    //System.Console.WriteLine(posicion);
-                    lista_de_layouts[posicion].AddView(tv14);
-                    posicion++;
-
-
                     for (int i = 0; i < 15; i++) ll.AddView(lista_de_layouts[i]);
 
+                    LinearLayout.LayoutParams button_margin = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent); ;
+
+                    button_margin.Gravity = GravityFlags.Center;
+                    Button actualizarBtn = new Button(this);
+                    actualizarBtn.Click += (sender, EventArgs) => { botonActualizarSeleccionado(sender, EventArgs, extintor); };
+                    actualizarBtn.LayoutParameters = button_margin;
+                    actualizarBtn.Text = "Actualizar";
+                    actualizarBtn.SetTextColor(Android.Graphics.Color.White);
+                    actualizarBtn.SetBackgroundColor(Android.Graphics.Color.Black);
+                    lista_de_layouts[posicion].AddView(actualizarBtn);
+                    ll.AddView(lista_de_layouts[posicion]);
+ 
+                    posicion++;
 
                     ImageView linea = new ImageView(this);
                     linea.SetImageResource(Resource.Drawable.linea);
+                    System.Console.WriteLine(posicion);
                     lista_de_layouts[posicion].AddView(linea);
                     ll.AddView(lista_de_layouts[posicion]);
+                   
+
                     layout.AddView(ll);
                 }
             }
 
+        }
+
+        public String formatearFecha(String time)
+        {
+            string[] fecha = time.ToString().Split(" ");
+            string[] modificar_formato = fecha[0].Split("/");
+            string fecha_modificada = modificar_formato[2] + "-" + modificar_formato[0] + "-" + modificar_formato[1];
+            return fecha_modificada;
+        }
+        private void botonActualizarSeleccionado(object sender, EventArgs eventArgs, Extintor extintor)
+        {
+            Intent intent = new Intent(base.BaseContext, typeof(Activities.actualizarForm));
+            intent.PutExtra("extintor", extintor.Id);
+
+            StartActivity(intent);
         }
     }
 }

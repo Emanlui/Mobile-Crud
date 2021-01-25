@@ -22,13 +22,28 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
 
-            
-            SetContentView(Resource.Layout.menuPrincipal);
+            if (!ap.getLogin())
+            {
+                StartActivity(typeof(login));
+                Finish();
+                return;
+            }
 
+            SetContentView(Resource.Layout.menuPrincipal);
             UsuarioCrud uc = new UsuarioCrud();
 
+            string mensaje;
+            if (uc.verificacionAdmin(ap.getCorreoKey()))
+            {
+                mensaje = "Ventana Administrador";
+            }
+            else
+            {
+                mensaje = "Centro de Trabajo: " + uc.getCentroDeTrabajo(ap.getCorreoKey());
+            }
+
             TextView tv = FindViewById<TextView>(Resource.Id.centroText);
-            string mensaje = "Centro de Trabajo: " + uc.getCentroDeTrabajo(ap.getCorreoKey());
+            
             tv.Text = mensaje;
 
             ImageView salir = FindViewById<ImageView>(Resource.Id.salirImage);
@@ -59,8 +74,10 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         {
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
-            ap.guardarCorreoPass("", "");
-            StartActivity(typeof(login)); 
+            ap.guardarCorreoPass("", false);
+
+            StartActivity(typeof(login));
+            Finish();
         }
     }
 }

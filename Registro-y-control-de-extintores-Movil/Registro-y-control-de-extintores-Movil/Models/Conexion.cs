@@ -20,9 +20,9 @@ namespace Registro_y_control_de_extintores_Movil.Models
         public Conexion()
         {
             string host = "sql5.freemysqlhosting.net";
-            string db = "sql5387073";
-            string user = "sql5387073";
-            string conexion_a_la_base = "server=" + host + ";userid=" + user + ";password=1ppt4rpjYR;database=" + db;
+            string db = "sql5388489";
+            string user = "sql5388489";
+            string conexion_a_la_base = "server=" + host + ";userid=" + user + ";password=x3eVS2wncp;database=" + db;
 
             con = new MySqlConnection(conexion_a_la_base);
 
