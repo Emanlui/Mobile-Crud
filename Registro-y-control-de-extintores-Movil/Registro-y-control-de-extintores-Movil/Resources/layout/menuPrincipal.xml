@@ -17,7 +17,7 @@
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="47.5dp"
             android:id="@+id/linearLayout2"
@@ -39,11 +39,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/centroText"
-                    android:layout_marginLeft="0.0dp" />
+                    android:layout_marginLeft="0.0dp"
+                    android:layout_marginTop="13.0dp" />
             </LinearLayout>
             <ImageView
-                android:src="@drawable/logout"
+                android:src="@drawable/salir"
                 android:layout_width="39.0dp"
+                android:background="#FFFFFF"
                 android:layout_height="31.5dp"
                 android:id="@+id/salirImage"
                 android:layout_marginRight="10.5dp" />
@@ -69,8 +71,9 @@
             android:id="@+id/extintoresLayout">
             <ImageView
                 
-                android:src="@drawable/extintoresico"
+                android:src="@drawable/extintor"
                 android:layout_width="82.0dp"
+                android:background="#FFFFFF"
                 android:layout_height="64.0dp"
                 android:layout_marginTop="5.5dp"
                 android:layout_marginRight="15.0dp"
@@ -119,7 +122,8 @@
             android:layout_height="74.0dp"
             android:id="@+id/galeriaLayout">
             <ImageView
-                android:src="@drawable/gallery"
+                android:src="@drawable/galeria"
+                android:background="#FFFFFF"
                 android:layout_width="82.0dp"
                 android:layout_height="64.0dp"
                 android:layout_marginTop="5.5dp"
@@ -170,6 +174,7 @@
             android:id="@+id/informacionLayout">
             <ImageView
                 android:src="@drawable/informacion"
+                android:background="#FFFFFF"
                 android:layout_width="82.0dp"
                 android:layout_height="64.0dp"
                 android:layout_marginTop="5.5dp"
@@ -219,10 +224,11 @@
             android:layout_height="74.0dp"
             android:id="@+id/contactosLayout">
             <ImageView
-                android:src="@drawable/contacts_logo"
+                android:src="@drawable/contactos"
                 android:layout_width="82.0dp"
                 android:layout_height="64.0dp"
                 android:layout_marginTop="5.5dp"
+                android:background="#FFFFFF"
                 android:layout_marginRight="15.0dp"
                 android:id="@+id/contactosImage" />
             <LinearLayout
@@ -270,11 +276,12 @@
             android:layout_height="74.0dp"
             android:id="@+id/acercaLayout">
             <ImageView
-                android:src="@drawable/about_us"
+                android:src="@drawable/sobrenosotros"
                 android:layout_width="82.0dp"
                 android:layout_height="64.0dp"
                 android:layout_marginTop="5.5dp"
                 android:id="@+id/acercaImage"
+                android:background="#FFFFFF"
                 android:layout_marginRight="10.0dp" />
             <LinearLayout
                 android:orientation="vertical"
@@ -320,10 +327,11 @@
             android:layout_height="74.0dp"
             android:id="@+id/correoLayout">
             <ImageView
-                android:src="@drawable/about_us"
+                android:src="@drawable/correo"
                 android:layout_width="82.0dp"
                 android:layout_height="64.0dp"
                 android:layout_marginTop="5.5dp"
+                android:background="#FFFFFF"
                 android:id="@+id/acercaImage"
                 android:layout_marginRight="10.0dp" />
             <LinearLayout

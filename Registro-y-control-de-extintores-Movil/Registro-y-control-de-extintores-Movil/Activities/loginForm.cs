@@ -30,16 +30,20 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             EditText pass = FindViewById<EditText>(Resource.Id.contrasenaText);
 
             UsuarioCrud uc = new UsuarioCrud();
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+
 
             if (uc.verificacionDeLogin(usuario.Text, pass.Text))
             {
-                Context mContext = Android.App.Application.Context;
-                AppPreferences ap = new AppPreferences(mContext);
-                ap.guardarCorreoPass(usuario.Text, pass.Text);
+                ap.guardarCorreoPass(usuario.Text, true);
                 StartActivity(typeof(menuPrincipal));
+                Finish();
+                return;
             }
             else
             {
+                ap.setLogin(false);    
                 Toast.MakeText(this, "El correo o contraseña incorrecta", ToastLength.Short).Show();
             }
         }

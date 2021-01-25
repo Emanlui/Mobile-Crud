@@ -22,9 +22,14 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
 
-            
-            SetContentView(Resource.Layout.menuPrincipal);
+            if (!ap.getLogin())
+            {
+                StartActivity(typeof(login));
+                Finish();
+                return;
+            }
 
+            SetContentView(Resource.Layout.menuPrincipal);
             UsuarioCrud uc = new UsuarioCrud();
 
             string mensaje;
@@ -69,8 +74,10 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         {
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
-            ap.guardarCorreoPass("", "");
-            StartActivity(typeof(login)); 
+            ap.guardarCorreoPass("", false);
+
+            StartActivity(typeof(login));
+            Finish();
         }
     }
 }

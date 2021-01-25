@@ -677,3 +677,9 @@ C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\androidx\proguard\e70d08ac-8584-47d2-9f2c-43adcc56e7b2.txt
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\androidx\proguard\f4812513-8d80-4b27-94f0-40a00e628815.cfg
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\android\src\crc64411566ff043543ac\DatePickerFragment.java
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\salir.png
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\extintor.png
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\galeria.png
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\correo.png
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\contactos.png
+C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\sobrenosotros.png
