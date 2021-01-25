@@ -59,11 +59,11 @@ namespace Registro_y_control_de_extintores_Movil.Models
 
                 if (uc.verificacionAdmin(ap.getCorreoKey()))
                 {
-                    cmd.CommandText = "Select * from extintor";
+                    cmd.CommandText = "Select * from extintor where extintor.habilitado=1";
                 }
                 else
                 {
-                    cmd.CommandText = "Select * from extintor,usuario,centro_de_trabajo WHERE usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo;";
+                    cmd.CommandText = "Select * from extintor,usuario,centro_de_trabajo WHERE usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo and extintor.habilitado=1;";
                 }
 
                 
@@ -163,11 +163,19 @@ namespace Registro_y_control_de_extintores_Movil.Models
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences(mContext);
 
-                cmd.CommandText = "SELECT * FROM extintor,usuario,centro_de_trabajo WHERE extintor.activo = @activo and usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo;";
+
+                if (uc.verificacionAdmin(ap.getCorreoKey()))
+                {
+                    cmd.CommandText = "SELECT * FROM extintor WHERE extintor.activo = @activo and extintor.habilitado=1;";
+                }
+                else
+                {
+                    cmd.CommandText = "SELECT * FROM extintor,usuario,centro_de_trabajo WHERE extintor.activo = @activo and usuario.id_centro=centro_de_trabajo.id and centro_de_trabajo.id = extintor.id_centro and correo=@correo and extintor.habilitado=1;";
+                    cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = ap.getCorreoKey();
+                }
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
                 cmd.Parameters.Add("@activo", MySqlDbType.Text).Value = text;
-                cmd.Parameters.Add("@correo", MySqlDbType.Text).Value = ap.getCorreoKey();
                 MySqlDataReader registros = cmd.ExecuteReader();
                 while (registros.Read())
                 {
@@ -292,7 +300,7 @@ namespace Registro_y_control_de_extintores_Movil.Models
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences(mContext);
 
-                cmd.CommandText = "SELECT * FROM extintor WHERE extintor.id = @id";
+                cmd.CommandText = "SELECT * FROM extintor WHERE extintor.id = @id and extintor.habilitado=1";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conexion.con;
                 cmd.Parameters.Add("@id", MySqlDbType.Text).Value = id;

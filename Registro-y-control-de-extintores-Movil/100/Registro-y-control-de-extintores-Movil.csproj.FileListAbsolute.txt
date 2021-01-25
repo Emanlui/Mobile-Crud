@@ -69,12 +69,9 @@ C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\tipos.png
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\photo.png
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\tec.png
-C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\gallery.jpg
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\logout.jpg
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\msplogo.png
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\extintoresico.png
-C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\contacts_logo.png
-C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\about_us.png
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\extintoresbc.jpg
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\extintoresc.jpg
 C:\Users\emanu\Desktop\Registro-y-control-de-extintores-Movil\Registro-y-control-de-extintores-Movil\100\res\drawable\extintoresab.jpg

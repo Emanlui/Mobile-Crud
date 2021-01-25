@@ -190,22 +190,10 @@
     <AndroidResource Include="Resources\drawable\Tipos.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\photo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\gallery.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\logout.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\extintoresICO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Contacts_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\about_us.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\extintoresbc.jpg" />
@@ -249,7 +237,7 @@
     <AndroidResource Include="Resources\drawable\TEC.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\logos\" />
+    <AndroidResource Include="Resources\drawable\photo.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\salir.png" />
