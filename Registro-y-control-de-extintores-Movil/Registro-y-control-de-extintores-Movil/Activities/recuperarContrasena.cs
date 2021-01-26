@@ -32,7 +32,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
         {
 
             TextView dato_del_usuario = FindViewById<TextView>(Resource.Id.usuarioCorreo);
-            if(dato_del_usuario.Text != "") { 
+            if(dato_del_usuario.Text != "") {
                 StringBuilder builder = new StringBuilder();
                 Random random = new Random();
                 char ch;
@@ -42,10 +42,9 @@ namespace Registro_y_control_de_extintores_Movil.Activities
                     builder.Append(ch);
                 }
 
-            
+
 
                 UsuarioCrud uc = new UsuarioCrud();
-                uc.cambiarContraseña(builder.ToString(),dato_del_usuario.Text);
 
                 Boolean verificarEnvioDeCorreo = false;
 
@@ -89,7 +88,7 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             //end email attachment part
 
             SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("emanuellejs1999@gmail.com", "");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("emanuellejs1999@gmail.com", "lhixmsiuljrqhcey");
             SmtpServer.EnableSsl = true;
             ServicePointManager.ServerCertificateValidationCallback = delegate (object sender, X509Certificate certificate, X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors) {
                 return true;
@@ -97,6 +96,10 @@ namespace Registro_y_control_de_extintores_Movil.Activities
             try
             {
                 SmtpServer.Send(mail);
+                UsuarioCrud uc = new UsuarioCrud();
+
+                uc.cambiarContraseña(v, correo);
+
             }
             catch (Exception exception)
             { 
