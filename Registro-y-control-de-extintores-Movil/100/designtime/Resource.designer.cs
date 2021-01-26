@@ -11237,101 +11237,101 @@ namespace Registro_y_control_de_extintores_Movil
 			// aapt resource value: 0x7F08007E
 			public const int ic_mtrl_chip_close_circle = 2131230846;
 			
-			// aapt resource value: 0x7F08007F
-			public const int informacion = 2131230847;
-			
 			// aapt resource value: 0x7F080001
-			public const int Interior = 2131230721;
-			
-			// aapt resource value: 0x7F080080
-			public const int linea = 2131230848;
-			
-			// aapt resource value: 0x7F080081
-			public const int logout = 2131230849;
-			
-			// aapt resource value: 0x7F080082
-			public const int msplogo = 2131230850;
-			
-			// aapt resource value: 0x7F080083
-			public const int mtrl_dialog_background = 2131230851;
-			
-			// aapt resource value: 0x7F080084
-			public const int mtrl_dropdown_arrow = 2131230852;
-			
-			// aapt resource value: 0x7F080085
-			public const int mtrl_ic_arrow_drop_down = 2131230853;
-			
-			// aapt resource value: 0x7F080086
-			public const int mtrl_ic_arrow_drop_up = 2131230854;
-			
-			// aapt resource value: 0x7F080087
-			public const int mtrl_ic_cancel = 2131230855;
-			
-			// aapt resource value: 0x7F080088
-			public const int mtrl_ic_error = 2131230856;
-			
-			// aapt resource value: 0x7F080089
-			public const int mtrl_popupmenu_background = 2131230857;
-			
-			// aapt resource value: 0x7F08008A
-			public const int mtrl_popupmenu_background_dark = 2131230858;
-			
-			// aapt resource value: 0x7F08008B
-			public const int mtrl_tabs_default_indicator = 2131230859;
-			
-			// aapt resource value: 0x7F08008C
-			public const int navigation_empty_icon = 2131230860;
-			
-			// aapt resource value: 0x7F08008D
-			public const int notification_action_background = 2131230861;
-			
-			// aapt resource value: 0x7F08008E
-			public const int notification_bg = 2131230862;
-			
-			// aapt resource value: 0x7F08008F
-			public const int notification_bg_low = 2131230863;
-			
-			// aapt resource value: 0x7F080090
-			public const int notification_bg_low_normal = 2131230864;
-			
-			// aapt resource value: 0x7F080091
-			public const int notification_bg_low_pressed = 2131230865;
-			
-			// aapt resource value: 0x7F080092
-			public const int notification_bg_normal = 2131230866;
-			
-			// aapt resource value: 0x7F080093
-			public const int notification_bg_normal_pressed = 2131230867;
-			
-			// aapt resource value: 0x7F080094
-			public const int notification_icon_background = 2131230868;
-			
-			// aapt resource value: 0x7F080095
-			public const int notification_template_icon_bg = 2131230869;
-			
-			// aapt resource value: 0x7F080096
-			public const int notification_template_icon_low_bg = 2131230870;
-			
-			// aapt resource value: 0x7F080097
-			public const int notification_tile_bg = 2131230871;
-			
-			// aapt resource value: 0x7F080098
-			public const int notify_panel_notification_icon_bg = 2131230872;
+			public const int Informacion = 2131230721;
 			
 			// aapt resource value: 0x7F080002
-			public const int Partes = 2131230722;
+			public const int Interior = 2131230722;
 			
-			// aapt resource value: 0x7F080099
-			public const int photo = 2131230873;
+			// aapt resource value: 0x7F08007F
+			public const int linea = 2131230847;
 			
-			// aapt resource value: 0x7F08009A
-			public const int salir = 2131230874;
+			// aapt resource value: 0x7F080080
+			public const int logout = 2131230848;
 			
-			// aapt resource value: 0x7F08009B
-			public const int sobrenosotros = 2131230875;
+			// aapt resource value: 0x7F080081
+			public const int msplogo = 2131230849;
+			
+			// aapt resource value: 0x7F080082
+			public const int mtrl_dialog_background = 2131230850;
+			
+			// aapt resource value: 0x7F080083
+			public const int mtrl_dropdown_arrow = 2131230851;
+			
+			// aapt resource value: 0x7F080084
+			public const int mtrl_ic_arrow_drop_down = 2131230852;
+			
+			// aapt resource value: 0x7F080085
+			public const int mtrl_ic_arrow_drop_up = 2131230853;
+			
+			// aapt resource value: 0x7F080086
+			public const int mtrl_ic_cancel = 2131230854;
+			
+			// aapt resource value: 0x7F080087
+			public const int mtrl_ic_error = 2131230855;
+			
+			// aapt resource value: 0x7F080088
+			public const int mtrl_popupmenu_background = 2131230856;
+			
+			// aapt resource value: 0x7F080089
+			public const int mtrl_popupmenu_background_dark = 2131230857;
+			
+			// aapt resource value: 0x7F08008A
+			public const int mtrl_tabs_default_indicator = 2131230858;
+			
+			// aapt resource value: 0x7F08008B
+			public const int navigation_empty_icon = 2131230859;
+			
+			// aapt resource value: 0x7F08008C
+			public const int notification_action_background = 2131230860;
+			
+			// aapt resource value: 0x7F08008D
+			public const int notification_bg = 2131230861;
+			
+			// aapt resource value: 0x7F08008E
+			public const int notification_bg_low = 2131230862;
+			
+			// aapt resource value: 0x7F08008F
+			public const int notification_bg_low_normal = 2131230863;
+			
+			// aapt resource value: 0x7F080090
+			public const int notification_bg_low_pressed = 2131230864;
+			
+			// aapt resource value: 0x7F080091
+			public const int notification_bg_normal = 2131230865;
+			
+			// aapt resource value: 0x7F080092
+			public const int notification_bg_normal_pressed = 2131230866;
+			
+			// aapt resource value: 0x7F080093
+			public const int notification_icon_background = 2131230867;
+			
+			// aapt resource value: 0x7F080094
+			public const int notification_template_icon_bg = 2131230868;
+			
+			// aapt resource value: 0x7F080095
+			public const int notification_template_icon_low_bg = 2131230869;
+			
+			// aapt resource value: 0x7F080096
+			public const int notification_tile_bg = 2131230870;
+			
+			// aapt resource value: 0x7F080097
+			public const int notify_panel_notification_icon_bg = 2131230871;
 			
 			// aapt resource value: 0x7F080003
-			public const int TEC = 2131230723;
+			public const int Partes = 2131230723;
+			
+			// aapt resource value: 0x7F080098
+			public const int photo = 2131230872;
+			
+			// aapt resource value: 0x7F080099
+			public const int salir = 2131230873;
+			
+			// aapt resource value: 0x7F08009A
+			public const int sobrenosotros = 2131230874;
+			
+			// aapt resource value: 0x7F08009B
+			public const int tec = 2131230875;
 			
 			// aapt resource value: 0x7F08009C
 			public const int test_custom_background = 2131230876;
